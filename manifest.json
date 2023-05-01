@@ -1,0 +1,23 @@
+{
+  "name": "MySnail",
+  "description": "A virtual pet snail that you can customize, upgrade, and access from any device.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["https://*/*", "http://*/*", "file://*/*"],
+  "action": {
+    "default_popup": "settings.html",
+    "default_icon": {
+      "16": "/icon/16.png",
+      "32": "/icon/32.png",
+      "48": "/icon/48.png",
+      "128": "/icon/128.png"
+    }
+  },
+  "icons": {
+    "16": "/icon/16.png",
+    "32": "/icon/32.png",
+    "48": "/icon/48.png",
+    "128": "/icon/128.png"
+  },
+  "options_page": "settings.html"
+}
