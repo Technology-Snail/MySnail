@@ -35,6 +35,13 @@ var mySnail = {
     }
 }
 
-window.setTimeout(function() {
-    mySnail.run();
-},4000);
+snailInterval = window.setInterval(function() {
+    if (document.readyState == 'complete') {
+        mySnail.run();
+        mySnail.getInfoFromPopup();
+        if (document.title == "MySnail Settings") {
+            mySnail.freeze();
+        }
+    }
+},500);
+
