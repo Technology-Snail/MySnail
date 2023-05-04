@@ -1,9 +1,9 @@
 {
   "name": "MySnail",
   "description": "A virtual pet snail that appears on every website you visit.",
-  "version": "1.0",
+  "version": "1.2.0",
   "manifest_version": 3,
-  "permissions": [],
+  "permissions": ["storage"],
   "action": {
     "default_popup": "settings.html",
     "default_icon": {
