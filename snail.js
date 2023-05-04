@@ -28,6 +28,28 @@ var mySnail = {
         this.snail.children[0].children[1].children[0].children[4].children[0].attributes.fill.value = bodyColorHigh;
         this.snail.children[0].children[1].children[0].children[4].children[1].attributes.fill.value = bodyColorHigh;
     },
+    getInfoFromPopup : function() {
+        chrome.storage.sync.get(['innerShellColor']).then((result) => {
+            var color1 = result.innerShellColor;
+            chrome.storage.sync.get(['shellColor']).then((result) => {
+                var color2 = result.shellColor;
+                chrome.storage.sync.get(['bodyColorLow']).then((result) => {
+                    var color3 = result.bodyColorLow;
+                    chrome.storage.sync.get(['bodyColorHigh']).then((result) => {
+                        var color4 = result.bodyColorHigh;
+                        if (color1 == undefined || color2 == undefined || color3 == undefined || color4 == undefined) {
+                            mySnail.setColors("#00f2ff", "#003fff", "#ffaa00", "#ffe500");
+                        } else {
+                            mySnail.setColors(color1, color2, color3, color4);
+                        }
+                    });
+                });
+            });
+        });
+        chrome.storage.sync.get(['snailSize']).then((result) => {
+            mySnail.setSize(parseInt(result.snailSize)/100);
+        });
+    },
     freeze : function() {
         this.snail.children[0].children[1].children[0].children[0].attributes.to.value = "0 0";
         this.snail.children[0].children[1].children[0].children[0].attributes.from.value = "0 0";
@@ -39,6 +61,7 @@ snailInterval = window.setInterval(function() {
     if (document.readyState == 'complete') {
         mySnail.run();
         mySnail.getInfoFromPopup();
+        window.clearInterval(snailInterval);
         if (document.title == "MySnail Settings") {
             mySnail.freeze();
         }
