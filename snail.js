@@ -47,11 +47,6 @@ var mySnail = {
             mySnail.setSize(parseInt(result.snailSize)/100);
         });
     },
-    freeze : function() {
-        this.snail.children[0].children[1].children[0].children[0].attributes.to.value = "0 0";
-        this.snail.children[0].children[1].children[0].children[0].attributes.from.value = "0 0";
-        this.frozen = true;
-    }
 }
 
 snailInterval = window.setInterval(function() {
@@ -60,7 +55,7 @@ snailInterval = window.setInterval(function() {
         mySnail.getInfoFromPopup();
         window.clearInterval(snailInterval);
         if (document.title == "MySnail Settings") {
-            mySnail.freeze();
+            mySnail.frozen = true;
         }
     }
 },500);
