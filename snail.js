@@ -61,6 +61,12 @@ var mySnail = {
             mySnail.setSize(parseInt(result.snailSize)/100);
         });
     },
+    hide : function() {
+        this.snail.style.display = "none";
+    },
+    show : function() {
+        this.snail.style.display = '';
+    }
 }
 
 snailInterval = window.setInterval(function() {
