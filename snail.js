@@ -10,7 +10,9 @@ var mySnail = {
     },
     snail : null,
     frozen : false,
+    size : 0.25,
     setSize : function(newSize) {
+        this.size = newSize;
         this.snail.children[0].style.height = (360 * newSize).toString();
         this.snail.children[0].style.width = (700 * newSize).toString();
         this.snail.children[0].children[1].attributes.transform.value = "scale(" + newSize.toString() + " " + newSize.toString() + ")";
