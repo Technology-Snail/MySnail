@@ -7,10 +7,22 @@ var mySnail = {
         this.snail.id = "mySnail" + Math.random().toString();
         this.snail.innerHTML = this.HTMLdata;
         document.documentElement.appendChild(this.snail);
+        this.interval = window.setInterval(function() {
+            if (!mySnail.frozen) {
+                mySnail.x += mySnail.speed;
+            } else {
+                mySnail.x = 0;
+            }
+            mySnail.snail.style.left = mySnail.x.toString()+"px";
+            if (mySnail.x > window.innerWidth || mySnail.x < -700*mySnail.size) { mySnail.x = -700*mySnail.size; }
+        },15);//70FPS
     },
     snail : null,
+    interval : null,
     frozen : false,
     size : 0.25,
+    x : -700,
+    speed : 0.4,
     setSize : function(newSize) {
         this.size = newSize;
         this.snail.children[0].style.height = (360 * newSize).toString();
