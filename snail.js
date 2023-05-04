@@ -7,6 +7,9 @@ var mySnail = {
         this.snail.id = "mySnail" + Math.random().toString();
         this.snail.innerHTML = this.HTMLdata;
         document.documentElement.appendChild(this.snail);
+        this.snail.ondblclick = function() {
+            mySnail.hide();
+        }
         this.interval = window.setInterval(function() {
             if (!mySnail.frozen) {
                 mySnail.x += mySnail.speed;
