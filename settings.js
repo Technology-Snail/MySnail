@@ -28,7 +28,7 @@ function updateStorage() {
     chrome.storage.sync.set({'bodyColorHigh' : document.getElementById("bodyColorHigh").value});
     chrome.storage.sync.set({'snailSize' : document.getElementById("sizeAdjust").value});
     mySnail.getInfoFromPopup();
-    mySnail.freeze();
+    mySnail.frozen = true;
 }
 
 function revert() {
