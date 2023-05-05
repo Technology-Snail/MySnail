@@ -6,6 +6,16 @@
                 height: 570px;
                 width: 400px;
                 text-align: center;
+                font-family: 'Marker felt', sans-serif;
+            }
+            section {
+                padding: 15px;
+                border-radius: 15px;
+                background-color: #efe5;
+            }
+            h2 {
+                font-size: 15pt;
+                padding: 0px;
             }
             sub {
                 font-size: 0.5em;
@@ -19,8 +29,14 @@
                 padding: 7px;
                 border-radius: 20px;
                 background-color: azure;
-            } button:hover { cursor: pointer; }
-            input[type="range"]:hover { cursor: ew-resize; }
+                width: 90%;
+            } button:hover {
+                cursor: pointer;
+                padding: 10px;
+            }
+            input[type="range"] {
+                width: 90%;
+            } input[type="range"]:hover { cursor: ew-resize; }
             input[type="color"] {
                 padding: 0px;
                 height: 40px;
@@ -39,31 +55,31 @@
         <script src="./settings.js"></script>
     </head>
     <body>
-        <h1>MySnail Settings<sub title="You are using a pre-release beta version of the MySnail Chrome Extension.">BETA</sub></h1>
-        <form id="snail_settings">
-            <section>
-                <h2>Customize Your Snail's Size</h2>
-                <label for="sizeAdjust">Smaller</label>
-                <input id="sizeAdjust" type="range" min="2" max="100" value="25">
-                <label for="sizeAdjust">Bigger</label>
-            </section>
-            <section>
-                <h2>Customize Your Snail's Colors</h2>
-                <table>
-                    <tr>
-                        <td><label for="innerShellColor">Inner Shell: </label><input id="innerShellColor" type="color" value="#00f2ff"></td>
-                        <td><label for="bodyColorLow">Lower Body: </label><input id="bodyColorLow" type="color" value="#ffaa00"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="shellColor">Outer Shell: </label><input id="shellColor" type="color" value="#003fff"></td>
-                        <td><label for="bodyColorHigh">Upper Body: </label><input id="bodyColorHigh" type="color" value="#ffe500"></td>
-                    </tr>
-                </table>
-            </section><br>
-            <section>
-                <button id="submit">Update Snail</button><br><br>
-                <button id="revert">Revert to Default</button>
-            </section>
-        </form>
+        <h1>MySnail<sub title="You are using a pre-release beta version of the MySnail Chrome Extension.">BETA</sub> Settings</h1>
+                    <section>
+                        <h2>Snail Size</h2>
+                        <input id="sizeAdjust" type="range" min="2" max="100" value="25">
+                    </section>
+        <section>
+            <h2>Snail Colors</h2>
+            <table>
+                <tr>
+                    <td><label for="innerShellColor">Inner Shell: </label><input id="innerShellColor" type="color" value="#00f2ff"></td>
+                    <td><label for="bodyColorLow">Lower Body: </label><input id="bodyColorLow" type="color" value="#ffaa00"></td>
+                </tr>
+                <tr>
+                    <td><label for="shellColor">Outer Shell: </label><input id="shellColor" type="color" value="#003fff"></td>
+                    <td><label for="bodyColorHigh">Upper Body: </label><input id="bodyColorHigh" type="color" value="#ffe500"></td>
+                </tr>
+            </table>
+        </section><br>
+        <section>
+            <table>
+                <tr>
+                    <td><button id="submit">Update Snail</button></td>
+                    <td><button id="revert">Revert to Default</button></td>
+                </tr>
+            </table>
+        </section>
     </body>
 </html>
