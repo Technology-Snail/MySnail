@@ -1,19 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
     chrome.storage.sync.get(['innerShellColor']).then((result) => {
-        document.body.style.backgroundColor = (result.innerShellColor);
-        document.getElementById('innerShellColor').value = (result.innerShellColor);
-    });
-    chrome.storage.sync.get(['shellColor']).then((result) => {
-        document.getElementById('shellColor').value = (result.shellColor);
-    });
-    chrome.storage.sync.get(['bodyColorLow']).then((result) => {
-        document.getElementById('bodyColorLow').value = (result.bodyColorLow);
-    });
-    chrome.storage.sync.get(['bodyColorHigh']).then((result) => {
-        document.getElementById('bodyColorHigh').value = (result.bodyColorHigh);
-    });
-    chrome.storage.sync.get(['snailSize']).then((result) => {
-        document.getElementById('sizeAdjust').value = parseInt(result.snailSize);
+        if (result.innerShellColor == undefined) {
+            revert();
+        } else {
+            document.body.style.backgroundColor = (result.innerShellColor);
+            document.getElementById('innerShellColor').value = (result.innerShellColor);
+            chrome.storage.sync.get(['shellColor']).then((result) => {
+                document.getElementById('shellColor').value = (result.shellColor);
+            });
+            chrome.storage.sync.get(['bodyColorLow']).then((result) => {
+                document.getElementById('bodyColorLow').value = (result.bodyColorLow);
+            });
+            chrome.storage.sync.get(['bodyColorHigh']).then((result) => {
+                document.getElementById('bodyColorHigh').value = (result.bodyColorHigh);
+            });
+            chrome.storage.sync.get(['snailSize']).then((result) => {
+                document.getElementById('sizeAdjust').value = parseInt(result.snailSize);
+            });
+            chrome.storage.sync.get(['snailSize']).then((result) => {
+                document.getElementById('sizeAdjust').value = parseInt(result.snailSize);
+            });
+            chrome.storage.sync.get(['snailSpeed']).then((result) => {
+                document.getElementById('snailSpeed').value = parseInt(result.snailSpeed);
+            });
+        }
     });
     document.getElementById("submit").addEventListener('click', updateStorage, false);
     document.getElementById("revert").addEventListener('click', revert, false);
