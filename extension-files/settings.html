@@ -6,7 +6,7 @@
                 height: 570px;
                 width: 400px;
                 text-align: center;
-                font-family: 'Marker felt', sans-serif;
+                font-family: 'Arial Rounded MT Bold', sans-serif;
             }
             section {
                 padding: 15px;
@@ -24,12 +24,15 @@
                 border-radius: 5px;
                 background-color: red;
                 color: white;
-            } sub:hover { cursor: help; }
+            }
+            sub:hover, label:hover { cursor: help; }
             button {
                 padding: 7px;
                 border-radius: 20px;
                 background-color: azure;
                 width: 90%;
+                font-family: 'Arial Rounded MT Bold', sans-serif;
+                color: white;
             } button:hover {
                 cursor: pointer;
                 padding: 10px;
@@ -49,6 +52,12 @@
             td {
                 width: 50%;
                 text-align: center;
+            }
+            #submit {
+                background-color: rgb(4, 172, 4);
+            }
+            #revert {
+                background-color: rgb(220, 21, 21);
             }
         </style>
         <script src="./snail.js"></script>
@@ -76,12 +85,12 @@
             <h2>Snail Colors</h2>
             <table>
                 <tr>
-                    <td><label for="innerShellColor">Inner Shell: </label><input id="innerShellColor" type="color" value="#00f2ff"></td>
-                    <td><label for="bodyColorLow">Lower Body: </label><input id="bodyColorLow" type="color" value="#ffaa00"></td>
+                    <td><label for="innerShellColor" title="This is the color of the center of the snail's shell, which is usually set to be slightly lighter than the color of the edge.">Inner Shell: </label><input id="innerShellColor" type="color" value="#00f2ff"></td>
+                    <td><label for="bodyColorLow" title="This is the color of the very bottom of the snail, the part that touches the bottom of your screen.  The snail body is a gradient between this color and the other snail body color you select.">Lower Body: </label><input id="bodyColorLow" type="color" value="#ffaa00"></td>
                 </tr>
                 <tr>
-                    <td><label for="shellColor">Outer Shell: </label><input id="shellColor" type="color" value="#003fff"></td>
-                    <td><label for="bodyColorHigh">Upper Body: </label><input id="bodyColorHigh" type="color" value="#ffe500"></td>
+                    <td><label for="shellColor" title="This is the color of the outside of the radial gradient of the snail's shell.">Outer Shell: </label><input id="shellColor" type="color" value="#003fff"></td>
+                    <td><label for="bodyColorHigh" title="This is the color of the snail's antennae, eyes, and the top of the color gradient from the bottom of the snail's body to the top.  This color is usually set to be slightly lighter than the lower part of the snail's body in order to create the effect of light shining on the snail from above.">Upper Body: </label><input id="bodyColorHigh" type="color" value="#ffe500"></td>
                 </tr>
             </table>
         </section><br>
