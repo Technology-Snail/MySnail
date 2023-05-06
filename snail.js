@@ -61,7 +61,18 @@ var mySnail = {
             });
         });
         chrome.storage.sync.get(['snailSize']).then((result) => {
-            mySnail.setSize(parseInt(result.snailSize)/100);
+            if (result.snailSize == undefined) {
+                mySnail.setSize(0.25);
+            } else {
+                mySnail.setSize(parseInt(result.snailSize)/100);
+            }
+        });
+        chrome.storage.sync.get(['snailSpeed']).then((result) => {
+            if (result.snailSpeed == undefined) {
+                mySnail.speed = 0.4;
+            } else {
+                mySnail.speed = parseInt(result.snailSpeed)/100;
+            }
         });
     },
     hide : function() {

@@ -1,7 +1,7 @@
 {
   "name": "MySnail",
   "description": "A virtual pet snail that appears on every website you visit.",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "manifest_version": 3,
   "permissions": ["storage"],
   "action": {
