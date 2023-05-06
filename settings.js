@@ -27,8 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     document.getElementById("submit").addEventListener('click', updateStorage, false);
     document.getElementById("revert").addEventListener('click', revert, false);
-    document.getElementById("sizeAdjust").addEventListener('click', updateStorage, false);
-    document.getElementById("snailSpeed").addEventListener('click', updateStorage, false);
+    document.getElementById("sliders").addEventListener('click', updateStorage, false);
 },false);
 
 function updateStorage() {
