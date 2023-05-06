@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("submit").addEventListener('click', updateStorage, false);
     document.getElementById("revert").addEventListener('click', revert, false);
     document.getElementById("sizeAdjust").addEventListener('click', updateStorage, false);
+    document.getElementById("snailSpeed").addEventListener('click', updateStorage, false);
 },false);
 
 function updateStorage() {
@@ -27,6 +28,7 @@ function updateStorage() {
     chrome.storage.sync.set({'bodyColorLow' : document.getElementById("bodyColorLow").value});
     chrome.storage.sync.set({'bodyColorHigh' : document.getElementById("bodyColorHigh").value});
     chrome.storage.sync.set({'snailSize' : document.getElementById("sizeAdjust").value});
+    chrome.storage.sync.set({'snailSpeed' : document.getElementById("snailSpeed").value});
     mySnail.getInfoFromPopup();
     mySnail.frozen = true;
 }
@@ -37,5 +39,6 @@ function revert() {
     document.getElementById("bodyColorLow").value = "#ffaa00";
     document.getElementById("bodyColorHigh").value = "#ffe500";
     document.getElementById("sizeAdjust").value = "25";
+    document.getElementById("snailSpeed").value = "40";
     updateStorage();
 }
