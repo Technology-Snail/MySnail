@@ -1,29 +1,45 @@
 {
-  "name": "MySnail",
-  "description": "A virtual pet snail that appears on every website you visit.",
-  "version": "1.5.5",
-  "manifest_version": 3,
-  "permissions": ["storage"],
-  "action": {
-    "default_popup": "settings.html",
-    "default_icon": {
-      "16": "/icon/16.png",
-      "32": "/icon/32.png",
-      "48": "/icon/48.png",
-      "128": "/icon/128.png"
+  "name" : "MySnail",
+  "short_name" : "🐌",
+  "version" : "1.5.5",
+  "version_name" : "1.5.5 BETA",
+  "manifest_version" : 3,
+  "minimum_chrome_version" : "4",
+  "permissions" : ["storage"],
+  "description" : "A customizable pet snail that appears on every website or file you visit with Chrome 🐌",
+  "homepage_url" : "https://github.com/Technology-Snail/MySnail-Chrome-Extension",
+  "author" : {
+    "email" : "email.technologysnail@gmail.com",
+    "type" : "small business",
+    "members" : [
+      {
+        "name" : "Wesley McGinn",
+        "github" : "https://github.com/WesleyMcGinn",
+        "email" : "wesleymcginn1@gmail.com"
+      }
+    ]
+  },
+  "action" : {
+    "default_popup" : "settings.html",
+    "default_title" : "MySnail",
+    "default_icon" : {
+      "16" : "/icon/16.png",
+      "32" : "/icon/32.png",
+      "48" : "/icon/48.png",
+      "128" : "/icon/128.png"
     }
   },
-  "icons": {
-    "16": "/icon/16.png",
-    "32": "/icon/32.png",
-    "48": "/icon/48.png",
-    "128": "/icon/128.png"
+  "icons" : {
+    "16" : "/icon/16.png",
+    "32" : "/icon/32.png",
+    "48" : "/icon/48.png",
+    "128" : "/icon/128.png"
   },
-  "options_page": "settings.html",
-  "content_scripts": [
+  "options_page" : "settings.html",
+  "content_scripts" : [
     {
-      "js": ["snail.js"],
-      "matches": [
+      "js" : ["snail.js"],
+      "matches" : [
         "https://*/*",
         "http://*/*",
         "file://*/*"
