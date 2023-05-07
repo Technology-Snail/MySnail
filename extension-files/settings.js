@@ -25,9 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
+    document.getElementById("sliders").addEventListener('click', updateStorage, false);
     document.getElementById("submit").addEventListener('click', updateStorage, false);
     document.getElementById("revert").addEventListener('click', revert, false);
-    document.getElementById("sliders").addEventListener('click', updateStorage, false);
+    
 },false);
 
 function updateStorage() {
