@@ -1,12 +1,12 @@
 {
   "name" : "MySnail",
   "short_name" : "🐌",
-  "version" : "1.5.6",
-  "version_name" : "1.5.6 BETA",
+  "version" : "2.0.0",
+  "version_name" : "NOT DONE - DO NOT USE",
   "manifest_version" : 3,
   "minimum_chrome_version" : "4",
   "permissions" : ["storage"],
-  "description" : "A customizable pet snail that appears on every website or file you visit with Chrome 🐌",
+  "description" : "A customizable snail friend that appears on every website and file you visit with Chrome 🐌",
   "homepage_url" : "https://github.com/Technology-Snail/MySnail-Chrome-Extension",
   "author" : {
     "email" : "email.technologysnail@gmail.com",
