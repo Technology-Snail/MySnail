@@ -4,7 +4,7 @@ var mySnail = {
     run : function() {
         this.snail = document.createElement("div");
         this.snail.style = this.CSSdata;
-        this.snail.id = "mySnail_" + Math.random().toString();
+        this.snail.classList = ["mySnail"];
         this.snail.innerHTML = this.HTMLdata;
         document.documentElement.appendChild(this.snail);
         this.snail.ondblclick = function() {
@@ -19,6 +19,9 @@ var mySnail = {
             mySnail.snail.style.left = mySnail.x.toString()+"px";
             if (mySnail.x > window.innerWidth || mySnail.x < -700*mySnail.size) { mySnail.x = -700*mySnail.size; }
         },15);//70FPS
+        var noprint = document.createElement("style");
+        noprint.innerHTML = "@media print {.mySnail{display:none;}}";
+        document.head.appendChild(noprint);
     },
     snail : null,
     interval : null,
