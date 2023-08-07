@@ -52,3 +52,5 @@ function revert() {
     document.getElementById("snailSpeed").value = "20";
     updateStorage();
 }
+
+mySnail.frozen = true;

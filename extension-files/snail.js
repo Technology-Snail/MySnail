@@ -91,8 +91,5 @@ snailInterval = window.setInterval(function() {
         mySnail.run();
         mySnail.getInfoFromPopup();
         window.clearInterval(snailInterval);
-        if (document.title == "MySnail Settings") {
-            mySnail.frozen = true;
-        }
     }
 },500);
