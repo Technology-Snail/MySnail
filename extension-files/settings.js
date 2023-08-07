@@ -49,6 +49,6 @@ function revert() {
     document.getElementById("bodyColorLow").value = "#ffaa00";
     document.getElementById("bodyColorHigh").value = "#ffe500";
     document.getElementById("sizeAdjust").value = "25";
-    document.getElementById("snailSpeed").value = "40";
+    document.getElementById("snailSpeed").value = "20";
     updateStorage();
 }
