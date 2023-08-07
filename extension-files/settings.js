@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("sliders").addEventListener('click', updateStorage, false);
     document.getElementById("submit").addEventListener('click', updateStorage, false);
     document.getElementById("revert").addEventListener('click', revert, false);
-    
+    document.getElementById("randomize").addEventListener('click', randomize, false);
 },false);
 
 function updateStorage() {
@@ -50,6 +50,22 @@ function revert() {
     document.getElementById("bodyColorHigh").value = "#ffe500";
     document.getElementById("sizeAdjust").value = "25";
     document.getElementById("snailSpeed").value = "20";
+    updateStorage();
+}
+
+function generateColor() {
+    var output = '';
+    for (i = 0; i < 6; i++) {
+        output += (Math.floor(Math.random()*16).toString(16));
+    }
+    return "#" + output;
+}
+
+function randomize() {
+    document.getElementById("innerShellColor").value = generateColor();
+    document.getElementById("shellColor").value = generateColor();
+    document.getElementById("bodyColorLow").value = generateColor();
+    document.getElementById("bodyColorHigh").value = generateColor();
     updateStorage();
 }
 
