@@ -55,9 +55,14 @@
             }
             #submit {
                 background-color: rgb(4, 172, 4);
+                width: 95%;
             }
             #revert {
                 background-color: rgb(220, 21, 21);
+            }
+            #randomize {
+                background-color: yellow;
+                color: black;
             }
         </style>
         <script src="./snail.js"></script>
@@ -97,10 +102,12 @@
         <section>
             <table>
                 <tr>
-                    <td><button id="submit">Update Snail</button></td>
                     <td><button id="revert">Revert to Default</button></td>
+                    <td><button id="randomize">Randomize Colors</button></td>
                 </tr>
-            </table>
+            </table><br>
+            <button id="submit">Update Snail</button>
         </section>
+        <div id="message"></div>
     </body>
 </html>
