@@ -88,8 +88,10 @@ var mySnail = {
 
 snailInterval = window.setInterval(function() {
     if (document.readyState == 'complete') {
-        mySnail.run();
-        mySnail.getInfoFromPopup();
+        if (document.getElementsByClassName("mySnail").length == 0) {
+            mySnail.run();
+            mySnail.getInfoFromPopup();
+        }
         window.clearInterval(snailInterval);
     }
 },500);
