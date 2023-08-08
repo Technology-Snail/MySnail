@@ -28,7 +28,16 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("sliders").addEventListener('click', updateStorage, false);
     document.getElementById("submit").addEventListener('click', updateStorage, false);
     document.getElementById("revert").addEventListener('click', revert, false);
-    document.getElementById("randomize").addEventListener('click', randomize, false);
+    document.getElementById("randomize").addEventListener('click', function() {
+        document.documentElement.style.cursor = "progress";
+        document.getElementById("randomize").disabled = "true";
+        window.setTimeout(function() {
+            randomize();
+            document.documentElement.style.cursor = "default";
+            document.getElementById("randomize").disabled = "";
+        }, 3000);
+        // Timeout inserted here to prevent exceeding Google Sync's "MAX_WRITE_OPERATIONS_PER_MINUTE" quota.
+    }, false);
 },false);
 
 function updateStorage() {

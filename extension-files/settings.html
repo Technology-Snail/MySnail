@@ -33,9 +33,12 @@
                 width: 90%;
                 font-family: 'Arial Rounded MT Bold', sans-serif;
                 color: white;
-            } button:hover {
+            } button:enabled:hover {
                 cursor: pointer;
                 padding: 10px;
+            } button:disabled {
+                cursor: progress;
+                background-color: grey !important;
             }
             input[type="range"] {
                 width: 90%;
