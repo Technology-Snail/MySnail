@@ -5,25 +5,21 @@
             body {
                 text-align: center;
                 font-family: 'Arial Rounded MT Bold', sans-serif;
+                background-image: linear-gradient(rgb(0, 160, 209), white, white);
             }
             section {
                 padding: 15px;
                 border-radius: 15px;
+                border-color: black;
+                border-style: dashed;
+                border-width: 1px;
                 background-color: #efe5;
+                height: 300px;
             }
-            h2 {
-                font-size: 15pt;
-                padding: 0px;
+            h1 {
+                font-size: 30pt;
+                line-height: 0px;
             }
-            sub {
-                font-size: 0.5em;
-                font-family: Impact, sans-serif;
-                padding: 3px;
-                border-radius: 5px;
-                background-color: red;
-                color: white;
-            }
-            sub:hover, label:hover { cursor: help; }
             button {
                 padding: 7px;
                 border-radius: 20px;
@@ -36,6 +32,17 @@
             } button:disabled {
                 cursor: progress;
                 background-color: grey !important;
+            }
+            textarea {
+                resize: none;
+                height: 100%;
+            }
+            #decree {
+                position: fixed;
+                bottom: 0px;
+                right: 10px;
+                text-align: right;
+                font-size: 30pt;
             }
         </style>
         <script src="https://unpkg.com/brain.js"></script>
@@ -146,13 +153,28 @@
         </script>
     </head>
     <body onload="randomize()">
-        <h1>MySnail AI Snail Training</h1>
-        <p>This is the page that allows us to train an AI to create good sets of random colors for snails.  When you click the "randomize" button in the MySnail popup, you don't want to end up with a bunch of ugly colors on your snail.  Therefore, a simple AI, trained on this page, decides what color combos to apply to your snail.</p>
-        <br>
-        <button onclick="trainSnailJudge(0)" style="background-color: red;">Bad</button>
-        <button onclick="trainSnailJudge(0.5)" style="background-color: orange;">Meh...</button>
-        <button onclick="trainSnailJudge(1)" style="background-color: green;">Perfect</button><br><br>
-        <textarea id="JSON Output" cols="80" rows="12"></textarea>
+        <table>
+            <tr>
+                <td>
+                    <section>
+                        <h1>MySnail AI Snail Training</h1>
+                        <p>This is the page that allows us to train an AI to create good sets of random colors for snails.  When you click the "randomize" button in the MySnail popup, you don't want your snail to look horrible.  Therefore, a simple AI, trained on this page, decides what color combos to apply to your snail.</p>
+                        <p>The AI, as it has been trained so far, will grade each randomly generated snail in the lower-right corner of your screen.  To teach the AI how good the snail actually is, click one of the grading buttons below.  The more snails you grade, the better the AI will understand which snails are good and which are bad.</p>
+                        <br>
+                        <button onclick="trainSnailJudge(0)" style="background-color: red;">F</button>
+                        <button onclick="trainSnailJudge(0.3)" style="background-color: orange;">D</button>
+                        <button onclick="trainSnailJudge(0.7)" style="background-color: yellow; color: black">C</button>
+                        <button onclick="trainSnailJudge(0.8)" style="background-color: greenyellow; color: black">B</button>
+                        <button onclick="trainSnailJudge(1)" style="background-color: limegreen; color: black">A</button>
+                    </section>
+                </td>
+                <td>
+                    <section>
+                        <textarea id="JSON Output" cols="80" rows="12" >JSON AI-Training Data Will Appear Here.</textarea>
+                    </section>
+                </td>
+            </tr>
+        </table>
         <p id="Decree"></p>
     </body>
 </html>
