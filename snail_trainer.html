@@ -135,7 +135,7 @@
                     document.getElementById("Decree").innerHTML += "<br>A";
                 }
             }
-            var training = [{input: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], output: {bad:1,good:0}}]
+            var training = [{input: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], output: {good:0}}]
             const snailJudge = new brain.NeuralNetwork();
             snailJudge.train(training);
             function trainSnailJudge(Opinion) {
@@ -143,7 +143,6 @@
                     input: [red(c1), grn(c1), blu(c1), red(c2), grn(c2), blu(c2), red(c3), grn(c3), blu(c3), red(c4), grn(c4), blu(c4)],
                     output: {}
                 }
-                newExample.output.bad = 1-Opinion;
                 newExample.output.good = Opinion;
                 training.push(newExample);
                 snailJudge.train(training);
