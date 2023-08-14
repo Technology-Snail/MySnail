@@ -1,3 +1,9 @@
+async function getJSON(URL) {
+    const req = new Request(URL);
+    const res = (await fetch(req)).json();
+    return res;
+}
+
 const snailJudge = new brain.NeuralNetwork();
 var trainingData;
 
@@ -32,14 +38,15 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("submit").addEventListener('click', updateStorage, false);
     document.getElementById("revert").addEventListener('click', revert, false);
     document.getElementById("randomize").addEventListener('click', function() {
-        document.documentElement.style.cursor = "progress";
         document.getElementById("randomize").disabled = "true";
-        window.setTimeout(function() {
+        document.documentElement.style.cursor = "progress";
+        getJSON("https://raw.githubusercontent.com/Technology-Snail/MySnail-Chrome-Extension/main/resources/ai_snail_training_data.json").then(function(x) {
+            trainingData = x;
+            snailJudge.train(trainingData);
             randomize();
+            document.getElementById("randomize").disabled = '';
             document.documentElement.style.cursor = "default";
-            document.getElementById("randomize").disabled = "";
-        }, 3000);
-        // Timeout inserted here to prevent exceeding Google Sync's "MAX_WRITE_OPERATIONS_PER_MINUTE" quota.
+        });
     }, false);
 },false);
 
@@ -73,11 +80,29 @@ function generateColor() {
     return "#" + output;
 }
 
+function red(Color) { return Math.round(100*parseInt(Color.substr(1, 2), 16)/255)/100; }
+function grn(Color) { return Math.round(100*parseInt(Color.substr(3, 2), 16)/255)/100; }
+function blu(Color) { return Math.round(100*parseInt(Color.substr(5, 2), 16)/255)/100; }
+
 function randomize() {
-    document.getElementById("innerShellColor").value = generateColor();
-    document.getElementById("shellColor").value = generateColor();
-    document.getElementById("bodyColorLow").value = generateColor();
-    document.getElementById("bodyColorHigh").value = generateColor();
+    var c1, c2, c3, c4, quality;
+    for (var i = 1; i > 0.5; i *= 0.99) {
+        c1 = generateColor();
+        c2 = generateColor();
+        c3 = generateColor();
+        c4 = generateColor();
+        var decree = snailJudge.run([red(c1), grn(c1), blu(c1), red(c2), grn(c2), blu(c2), red(c3), grn(c3), blu(c3), red(c4), grn(c4), blu(c4)]);
+        quality = decree.good;
+        if (quality > i) {
+            i = 0;
+        }
+    }
+    console.log("AI Sucessfully Generated Random Snail of Quality:");
+    console.log(quality*100);
+    document.getElementById("innerShellColor").value = c1;
+    document.getElementById("shellColor").value = c2;
+    document.getElementById("bodyColorLow").value = c3;
+    document.getElementById("bodyColorHigh").value = c4;
     updateStorage();
 }
 
