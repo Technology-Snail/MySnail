@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>MySnail Settings</title>
+        <link rel="icon" type="image/png" href="./icon/48.png">
         <style>
             body {
                 height: 570px;
@@ -33,9 +35,12 @@
                 width: 90%;
                 font-family: 'Arial Rounded MT Bold', sans-serif;
                 color: white;
-            } button:hover {
+            } button:enabled:hover {
                 cursor: pointer;
                 padding: 10px;
+            } button:disabled {
+                cursor: progress;
+                background-color: grey !important;
             }
             input[type="range"] {
                 width: 90%;
@@ -55,11 +60,17 @@
             }
             #submit {
                 background-color: rgb(4, 172, 4);
+                width: 95%;
             }
             #revert {
                 background-color: rgb(220, 21, 21);
             }
+            #randomize {
+                background-color: yellow;
+                color: black;
+            }
         </style>
+        <script src="./brain.js"></script>
         <script src="./snail.js"></script>
         <script src="./settings.js"></script>
     </head>
@@ -70,13 +81,13 @@
                 <td>
                     <section>
                         <h2>Snail Size</h2>
-                        <input id="sizeAdjust" type="range" min="2" max="100" value="25">
+                        <input id="sizeAdjust" type="range" min="2" max="50" value="25">
                     </section>
                 </td>
                 <td>
                     <section>
                         <h2>Snail Speed</h2>
-                        <input id="snailSpeed" type="range" min="0" max="200" value="40">
+                        <input id="snailSpeed" type="range" min="0" max="200" value="20">
                     </section>
                 </td>
             </tr>
@@ -92,13 +103,14 @@
                     <td><label for="shellColor" title="This is the color of the outside of the radial gradient of the snail's shell.">Outer Shell: </label><input id="shellColor" type="color" value="#003fff"></td>
                     <td><label for="bodyColorHigh" title="This is the color of the snail's antennae, eyes, and the top of the color gradient from the bottom of the snail's body to the top.  This color is usually set to be slightly lighter than the lower part of the snail's body in order to create the effect of light shining on the snail from above.">Upper Body: </label><input id="bodyColorHigh" type="color" value="#ffe500"></td>
                 </tr>
-            </table>
+            </table><br>
+            <button id="submit">Save New Colors</button>
         </section><br>
         <section>
             <table>
                 <tr>
-                    <td><button id="submit">Update Snail</button></td>
                     <td><button id="revert">Revert to Default</button></td>
+                    <td><button id="randomize">Randomize Colors</button></td>
                 </tr>
             </table>
         </section>
