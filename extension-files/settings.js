@@ -1,3 +1,6 @@
+const snailJudge = new brain.NeuralNetwork();
+var trainingData;
+
 document.addEventListener('DOMContentLoaded', function() {
     chrome.storage.sync.get(['innerShellColor']).then((result) => {
         if (result.innerShellColor == undefined) {
