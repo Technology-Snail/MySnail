@@ -23,3 +23,11 @@ Later on, Version 2.0 will bring drastic changes to MySnail, including but not l
   - [x] Fun fact of the day, based on something about the national or international day it is. (Example: Penguin Awareness Day, January 20, may have a fun fact about penguins.)
   - [x] Breaking News! (only good news, no bad)  This can include an epic newly discovered species, a major advancement in technology, a rescue, etc., directly from MySnail News, a source you can trust that won't depress you with bad news.
   - [x] VEAOUI (_Very extreme alerts of utmost importance_)  This does not appear in the checkbox options because it is not optional.  If the world is going to end and there's something you can do about it, your snail will let you know.  Or if a large portion of the world is in great danger due to a massive natural disaster, unlike anything that has occurred in the past 200 years, you will be notified.  The chances that you will ever recieve such a notification are highly unlikely.
+
+
+![image](https://github.com/Technology-Snail/MySnail-Chrome-Extension/assets/71152561/43caed6d-1d88-4cc8-a7e9-386b4daccbff)
+< Get the MySnail Chrome Extension Today!
+
+(Instructions for installation will be available soon.)
+
+#### **Note:** _This has not yet been published to the Chrome Web Store._
