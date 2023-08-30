@@ -28,6 +28,20 @@ Later on, Version 2.0 will bring drastic changes to MySnail, including but not l
 ![image](https://github.com/Technology-Snail/MySnail-Chrome-Extension/assets/71152561/43caed6d-1d88-4cc8-a7e9-386b4daccbff)
 < Get the MySnail Chrome Extension Today!
 
-(Instructions for installation will be available soon.)
+# How to Install the Extension Now
 
-#### **Note:** _This has not yet been published to the Chrome Web Store._
+Unfortunately, the MySnail Chrome Extension has not yet been published to the Chrome Web Store.  The TechnologySnail business will not be _officially_ releasing any products until a home website for TechnologySnail has been fully developed and there are at least three solid products to offer, one of which would be the MySnail Chrome Extension.
+
+Despite the fact that you can't just click a button on the Chrome Web Store and have the snail on your screen, you can _still_ get the MySnail Chrome Extension on your computer by using a different method... And it is totally worth it!
+
+Just follow the simple steps below to get your pet digital snail:
+ 1. Download the Chrome Extension by clicking [this link](https://github.com/Technology-Snail/MySnail-Chrome-Extension/archive/refs/heads/main.zip).
+ 2. Unzip/Unpack/Extract the previously downloaded zip file into its own folder.
+ 3. Go to the URL `chrome://extensions`.
+ 4. In the upper-right corner, you will see an on/off switch with the words "Developer mode" next to it.  Turn this switch on.
+ 5. A set of buttons will appear near the upper-left corner.  Click the one that says "Load unpacked".  When a file manager dialog opens, go to the folder you obtained in step two and select the folder inside of it called "extension-files".
+ 6. That's it!  Enjoy your snail!
+
+# Feedback
+
+If you have any technical difficulties, questions, or feedback, feel free to participate in this repository's [discussion](https://github.com/Technology-Snail/MySnail-Chrome-Extension/discussions/8), or send an email to [email.technologysnail@gmail.com](https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=email.technologysnail@gmail.com).
