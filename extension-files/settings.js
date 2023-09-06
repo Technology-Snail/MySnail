@@ -41,11 +41,13 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("randomize").disabled = "true";
         document.documentElement.style.cursor = "progress";
         getJSON("https://technology-snail.github.io/MySnail-Chrome-Extension/resources/ai_snail_training_data.json").then(function(x) {
-            trainingData = x;
-            snailJudge.train(trainingData);
-            randomize();
-            document.getElementById("randomize").disabled = '';
-            document.documentElement.style.cursor = "default";
+            setTimeout(function() {
+                trainingData = x;
+                snailJudge.train(trainingData);
+                randomize();
+                document.getElementById("randomize").disabled = '';
+                document.documentElement.style.cursor = "default";
+            }, 2000);
         });
     }, false);
 },false);
