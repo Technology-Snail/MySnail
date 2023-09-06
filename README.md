@@ -8,9 +8,11 @@ The most recent version of MySnail is version 1.8.  Version 1.8 includes:
  - Customizable size
  - Customizable speed
  - AI-powered color randomizer button
+
 Version 1.9 will introduce:
  - A more aesthetic and convenient popup with the same options
  - More error prevention
+
 Later on, Version 2.0 will bring drastic changes to MySnail, including but not limited to:
  - The snail's ability to speak with a word bubble
  - An options page for more settings beyond the usual found in the popup
