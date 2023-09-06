@@ -2,7 +2,7 @@
   "name" : "MySnail",
   "short_name" : "🐌",
   "version" : "1.8.1",
-  "version_name" : "1.8.1 BETA",
+  "version_name" : "1.8",
   "manifest_version" : 3,
   "minimum_chrome_version" : "42",
   "permissions" : ["storage"],
