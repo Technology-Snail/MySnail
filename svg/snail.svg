@@ -7,7 +7,6 @@
         <radialGradient cx="0.5" cy="0.5" id="mySnail_snailShellGradient" r="0.5" spreadMethod="pad">
             <stop offset="0" stop-color="#00f2ff" stop-opacity="1"/>
             <stop offset="1" stop-color="#003fff" stop-opacity="1"/>
-            <animate attributeName="cx" values="0.5;0.534729635533386;0.5684040286651337;0.6;0.6285575219373079;0.6532088886237957;0.6732050807568877;0.6879385241571817;0.6969615506024416;0.7;0.6969615506024416;0.6879385241571817;0.6732050807568878;0.6532088886237957;0.6285575219373079;0.6;0.5684040286651337;0.534729635533386;0.5;0.4652703644676139;0.43159597133486627;0.39999999999999997;0.37144247806269215;0.34679111137620444;0.3267949192431123;0.31206147584281835;0.3030384493975584;0.3;0.30303844939755836;0.3120614758428183;0.32679491924311227;0.34679111137620433;0.37144247806269204;0.3999999999999999;0.43159597133486627;0.46527036446671374;0.5;" dur="7s" repeatCount="indefinite"/>
         </radialGradient>
     </defs>
     <g transform="scale(0.25 0.25)">
@@ -17,17 +16,13 @@
             <g>
                 <polygon fill="#ffe500" points="613.5501098632812,95.53179931640625 460.68084716796875,100.63578796386719 460.68084716796875,90.42781066894531 613.5501098632812,95.53179931640625 " stroke="#000000" stroke-width="0" transform="rotate(-89.9363 537.115 95.5318)"/>
                 <circle cx="537.214286" cy="24.642857" fill="#ffe500" r="7" stroke="#000000" stroke-width="0"/>
-                <circle cx="537.17" cy="25" fill="#000000" opacity="0.5" r="3" stroke-width="0">
-                    <animate attributeName="r" values="3;5;3" dur="7s" repeatCount="indefinite"/>
-                </circle>
+                <circle cx="537.17" cy="25" fill="#000000" opacity="0.7" r="5" stroke-width="0"/>
                 <animatetransform attributename="transform" type="rotate" values="7 538.5 167.5;30 538.5 167.5;7 538.5 167.5" dur="2.7s" repeatCount="indefinite"/>
             </g>
             <g>
                 <polygon fill="#ffe500" points="663.9853515625,103.45901489257812 511.1160583496094,108.74237060546875 511.1160583496094,98.1756591796875 663.9853515625,103.45901489257812 " stroke="#000000" stroke-width="0" transform="rotate(-68.3194 587.551 103.459)"/>
                 <circle cx="613.214286" cy="38.5" fill="#ffe500" r="7" stroke="#000000" stroke-width="0"/>
-                <circle cx="613.33331" cy="38.7" fill="#000000" opacity="0.5" r="3" stroke-width="0">
-                    <animate attributeName="r" values="3;5;3" dur="7s" repeatCount="indefinite"/>
-                </circle>
+                <circle cx="613.33331" cy="38.7" fill="#000000" opacity="0.7" r="5" stroke-width="0"/>
                 <animatetransform attributename="transform" type="rotate" values="12 562.5 167.5;30 562.5 167.5;12 562.5 167.5" dur="2.7s" repeatCount="indefinite"/>
             </g>
             <path d="m527.7,186.7c0,0 5.33333,11 13.33333,12c8,1 12,-3 17,-9.33333" fill-opacity="0" opacity="0.5" stroke="#000000" stroke-width="2" transform="rotate(4.26477 542.833 192.743)"/>
