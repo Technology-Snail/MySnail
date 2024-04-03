@@ -1,7 +1,7 @@
 {
   "name" : "MySnail",
   "short_name" : "🐌",
-  "version" : "1.9.0",
+  "version" : "1.9.2",
   "version_name" : "1.9",
   "manifest_version" : 3,
   "minimum_chrome_version" : "49",
