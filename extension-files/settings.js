@@ -60,8 +60,7 @@ function updateStorage() {
     chrome.storage.sync.set({'bodyColorHigh' : document.getElementById("bodyColorHigh").value});
     chrome.storage.sync.set({'snailSize' : document.getElementById("sizeAdjust").value});
     chrome.storage.sync.set({'snailSpeed' : document.getElementById("snailSpeed").value});
-    mySnail.getInfoFromPopup();
-    mySnail.frozen = true;
+    snailList[0].getInfoFromPopup();
 }
 
 function revert() {
@@ -107,5 +106,3 @@ function randomize() {
     document.getElementById("bodyColorHigh").value = c4;
     updateStorage();
 }
-
-mySnail.frozen = true;
