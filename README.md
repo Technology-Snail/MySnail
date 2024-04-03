@@ -14,6 +14,15 @@ Version 2.0 will bring drastic changes to MySnail, including but not limited to:
   - [x] Fun fact of the day, based on something about the national or international day it is. (Example: Penguin Awareness Day, January 20, may have a fun fact about penguins.)
   - [x] Breaking News! (only good news, no bad)  This can include an epic newly discovered species, a major advancement in technology, a rescue, etc., directly from MySnail News, a source you can trust that won't depress you with bad news.
 
+Shortly after the release of version 2.0, version 3.0 will be released.  Version 3 will involve:
+ - The ability to click and drag snails to other locations on the page
+ - SnailChat, so you can add other people with the extension to your friends list and you will be able to see their snail if you are on the same site (they can turn off this option for privacy reasons if they want).  You can click your snail and an empty word bubble will appear above it that you can type in.  Hit enter and your friends see the word bubble above your snail, so you can talk to each other through your snails!  A simple but hilariously fun way to communicate, especially when collaborating on a project.  (Technical note: _"On the same site" refers to the same domain, not an exact URL.  `earth.google.com` is separate from `mail.google.com`, but `earth.google.com/hello` is the same as `earth.google.com/hi` and `earth.google.com`._)
+ - An available pro plan, involving the following:
+ - Have multiple snails at a time on a site
+ - Customise and save multiple snails, with all your snails synced across Chrome
+ - Enable the ability for snails to not only be at the bottom of the page but also on the walls and the ceiling!
+ - More! (TBD, potentially AI stuff....)
+
 
 ![image](https://github.com/Technology-Snail/MySnail-Chrome-Extension/assets/71152561/43caed6d-1d88-4cc8-a7e9-386b4daccbff)
 < Get the MySnail Chrome Extension Today!
