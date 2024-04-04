@@ -113,16 +113,4 @@ class mySnail {
     }
 }
 
-var snailList = [];
-if (document.title == "MySnail Settings") {
-    snailList.push(new mySnail(true));
-} else {
-    var snailInterval = window.setInterval(function() {
-        if (document.readyState == 'complete') {
-            if (document.getElementsByClassName("mySnail").length == 0) {
-                snailList.push(new mySnail());
-            }
-            window.clearInterval(snailInterval);
-        }
-    }, 500);
-}
+snail = new mySnail();
