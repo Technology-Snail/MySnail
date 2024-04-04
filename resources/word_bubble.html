@@ -11,14 +11,13 @@
             function setup() {
                 document.getElementById("bubble").style.bottom = (400 * snail.size).toString() + "px";
                 setInterval(function() {
-                    document.getElementById("bubble").style.right = (window.innerWidth - snail.x - snail.size*470 + document.getElementById("bubble").style.width).toString() + "px";
+                    document.getElementById("bubble").style.right = (window.innerWidth - snail.x - snail.size*470).toString() + "px";
                 }, 15);
             }
         </script>
         <style>
             .mySnailWordBubble {
                 position: fixed;
-                overflow: visible;
                 padding: 12px;
                 background-color: white;
                 border: solid black 2px;
@@ -31,12 +30,11 @@
                 color: black;
                 margin-bottom: 0px;
                 bottom: -5px;
+                right: -1000px;
             }
         </style>
     </head>
     <body onload=setup()>
-        <h1>Lorem Ipsum</h1>
-        <p>Lorem ipsum, dolor sit amet.  Consectetur adispisciting elit de uim vulputate!</p>
         <input type="text" value="Hello!" oninput="text(this.value)">
         <div id="bubble" class="mySnailWordBubble">Hello!</div>
     </body>
