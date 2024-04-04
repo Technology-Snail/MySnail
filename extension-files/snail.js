@@ -96,6 +96,21 @@ class mySnail {
     show() {
         this.snail.style.display = '';
     }
+    hideBubble() {
+        this.wordBubble.style.display = "none";
+    }
+    showBubble() {
+        this.wordBubble.style.display = '';
+    }
+    text(words, durationSeconds = 0) {
+        this.wordBubble.innerHTML = words;
+        this.showBubble();
+        if (durationSeconds != 0) {
+            setTimeout(() => {
+                this.hideBubble();
+            }, 1000*durationSeconds);
+        }
+    }
 }
 
 var snailList = [];
