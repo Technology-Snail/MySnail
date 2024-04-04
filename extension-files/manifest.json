@@ -1,7 +1,7 @@
 {
   "name" : "MySnail",
   "short_name" : "🐌",
-  "version" : "1.9.6",
+  "version" : "2.0.0",
   "manifest_version" : 3,
   "minimum_chrome_version" : "49",
   "permissions" : ["storage"],
@@ -13,7 +13,7 @@
     "type" : "business"
   },
   "action" : {
-    "default_popup" : "settings.html",
+    "default_popup" : "popup.html",
     "default_title" : "MySnail",
     "default_icon" : {
       "16" : "/icon/16.png",
@@ -28,7 +28,7 @@
     "48" : "/icon/48.png",
     "128" : "/icon/128.png"
   },
-  "options_page" : "settings.html",
+  "options_page" : "options.html",
   "content_scripts" : [
     {
       "js" : ["snail.js"],
