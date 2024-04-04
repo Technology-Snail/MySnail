@@ -1,7 +1,7 @@
 {
   "name" : "MySnail",
   "short_name" : "🐌",
-  "version" : "1.9.5",
+  "version" : "1.9.6",
   "manifest_version" : 3,
   "minimum_chrome_version" : "49",
   "permissions" : ["storage"],
