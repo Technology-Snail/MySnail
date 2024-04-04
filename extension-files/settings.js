@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("randomize").addEventListener('click', function() {
         document.getElementById("randomize").disabled = "true";
         document.documentElement.style.cursor = "progress";
-        getJSON("https://technology-snail.github.io/MySnail-Chrome-Extension/resources/ai_snail_training_data.json").then(function(x) {
+        getJSON("https://technology-snail.github.io/MySnail/resources/ai_snail_training_data.json").then(function(x) {
             setTimeout(function() {
                 trainingData = x;
                 snailJudge.train(trainingData);
