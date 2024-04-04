@@ -1,8 +1,54 @@
 # MySnail Chrome Extension
 This chrome extension, developed by TechnologySnail, allows you to have a **virtual pet snail** that shows up on _every website_ you visit.  You can **_customize_** your snail by changing its colors, size, and speed in the popup menu or in the options page.  The snail continuously crawls across the screen, and comes out of the left side after it has fully disappeared off the right side of the screen.  To hide the snail, simply double-click it.  It will come back when you reload the page or come back to it.
 
+# MySnail API
+Although the chrome extension is MySnail's central purpose, MySnail also has an API.  If you are a website developer, you can add a touch of fun to any site by including the following code in the `<head>` element of your page:
+```
+<script src="https://technology-snail.github.io/MySnail/resources/snail.js"></script>
+<script>new mySnail()</script>
+```
+You can also include the script with the first line and make the snail appear later.  If you have something that takes a long time to load on your site, for example, you could create the snail when the user clicks the button:
+```
+<button onclick="new mySnail()">Begin Processing...."</button>
+```
+This would add a halarious twist to your website to make the wait not seem so long!
+
+You can also customise the snail with the following parameters:
+| Parameter Name | What It Is | Default Value |
+| :-- | :-- | :-- |
+| Freeze | Set to `true` if you want the snail to stay in one spot and `false` if you want the snail to crawl from one side of the screen to the other. | `false` |
+| Size | How big the snail should be (note that quality will not be lost to pixelation) | `0.25` (about 1 inch tall) |
+| Speed | Approximately how fast the snail should move (the distance in pixels per frame, at 70 FPS) | `0.4` |
+| Colors | A list of four CSS colors in this order: inner shell, outer shell, lower body, upper body | `["#00f2ff", "#003fff", "#ffaa00", "#ffe500"]` |
+
+For example, if you wanted to create a moving snail that was an inch tall and moved painfully slow, with a blue shell and a yellow-to-orange body:
+```
+new mySnail(false, 0.25, 0.1, ["deepskyblue", "royalblue", "orange", "yellow"]);
+```
+If you want the snail to dissappear later, you can use the `hide()` function.  Just make sure to store the snail in a variable first:
+```
+aSnailNamedJoe = new mySnail(); // Stores a new snail in a variable
+aSnailNamedJoe.hide(); // Makes the snail dissappear
+```
+There are also some other functions you can use.  Here are just a few examples:
+```
+aSnailNamedJoe.show(); // Makes snail reappear
+aSnailNamedJoe.setSize(1); // Makes the snail BIG
+aSnailNamedJoe.setSize(0.1); // Makes the snail little
+aSnailNamedJoe.setColors(["red","red","red","red"]); // Makes the snail completely red
+aSnailNamedJoe.frozen = true; // Freeze the snail in the lower-left corner of the screen (antennae will still move)
+aSnailNamedJoe.frozen = false; // Allow a frozen snail to move again
+aSnailNamedJoe.speed = 0.1; // Make the snail move very slow
+aSnailNamedJoe.speed = 5; // Make the snail move too fast!
+aSnailNamedJoe.x = 0; // Teleport the snail to the left side of the screen
+aSnailNamedJoe.x = window.innerWidth / 2; Teleport the snail halfway across the screen
+```
+Please note that the snail is completely immune to mouse events and clicks will pass through it to anything that it may be covering up.
+
+<br>
+
 ## Future Plans:
-Version 2.0 will bring drastic changes to MySnail, including but not limited to:
+Version 2.0 of the chrome extension will bring drastic changes to MySnail, including but not limited to:
  - The snail's ability to speak with a word bubble
  - An options page for more settings beyond the usual found in the popup
  - A way to submit feedback to TechnologySnail (the business that develops MySnail)
@@ -26,6 +72,8 @@ Shortly after the release of version 2.0, version 3.0 will be released.  Version
 
 ![image](https://github.com/Technology-Snail/MySnail-Chrome-Extension/assets/71152561/43caed6d-1d88-4cc8-a7e9-386b4daccbff)
 < Get the MySnail Chrome Extension Today!
+
+<br>
 
 # How to Install the Extension Now
 
