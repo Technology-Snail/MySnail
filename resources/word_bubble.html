@@ -5,10 +5,39 @@
         <script src="./snail.js"></script>
         <script>
             snail = new mySnail();
+            function text(t) {
+                document.getElementById("bubble").innerHTML = t;
+            }
+            function setup() {
+                document.getElementById("bubble").style.bottom = (400 * snail.size).toString() + "px";
+                setInterval(function() {
+                    document.getElementById("bubble").style.right = (window.innerWidth - snail.x - snail.size*470 + document.getElementById("bubble").style.width).toString() + "px";
+                }, 15);
+            }
         </script>
+        <style>
+            .mySnailWordBubble {
+                position: fixed;
+                overflow: visible;
+                padding: 12px;
+                background-color: white;
+                border: solid black 2px;
+                border-radius: 12px;
+                border-bottom-right-radius: 0px;
+                box-shadow: #000a -2px 5px 5px;
+                font-family: 'Arial Rounded MT Bold', 'Asap SemiBold', 'Rounded Mplus 1c Bold', FairyMuffinRoundPop, 'Gill Sans', 'Trebuchet MS', sans-serif;
+                font-size: 12pt;
+                width: 270px;
+                color: black;
+                margin-bottom: 0px;
+                bottom: -5px;
+            }
+        </style>
     </head>
-    <body>
+    <body onload=setup()>
         <h1>Lorem Ipsum</h1>
         <p>Lorem ipsum, dolor sit amet.  Consectetur adispisciting elit de uim vulputate!</p>
+        <input type="text" value="Hello!" oninput="text(this.value)">
+        <div id="bubble" class="mySnailWordBubble">Hello!</div>
     </body>
 </html>
