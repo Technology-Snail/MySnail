@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 randomize();
                 document.getElementById("randomize").disabled = '';
                 document.documentElement.style.cursor = "default";
-            }, 2000);
+            }, 500);
         });
     }, false);
 },false);
@@ -60,8 +60,7 @@ function updateStorage() {
     chrome.storage.sync.set({'bodyColorHigh' : document.getElementById("bodyColorHigh").value});
     chrome.storage.sync.set({'snailSize' : document.getElementById("sizeAdjust").value});
     chrome.storage.sync.set({'snailSpeed' : document.getElementById("snailSpeed").value});
-    mySnail.getInfoFromPopup();
-    mySnail.frozen = true;
+    snailList[0].getInfoFromPopup();
 }
 
 function revert() {
@@ -88,24 +87,20 @@ function blu(Color) { return Math.round(100*parseInt(Color.substr(5, 2), 16)/255
 
 function randomize() {
     var c1, c2, c3, c4, quality;
-    for (var i = 1; i > 0.5; i *= 0.99) {
+    while (true) {
         c1 = generateColor();
         c2 = generateColor();
         c3 = generateColor();
         c4 = generateColor();
         var decree = snailJudge.run([red(c1), grn(c1), blu(c1), red(c2), grn(c2), blu(c2), red(c3), grn(c3), blu(c3), red(c4), grn(c4), blu(c4)]);
         quality = decree.good;
-        if (quality > i) {
-            i = 0;
+        if (quality == 1) {
+            break;
         }
     }
-    console.log("AI Sucessfully Generated Random Snail of Quality:");
-    console.log(quality*100);
     document.getElementById("innerShellColor").value = c1;
     document.getElementById("shellColor").value = c2;
     document.getElementById("bodyColorLow").value = c3;
     document.getElementById("bodyColorHigh").value = c4;
     updateStorage();
 }
-
-mySnail.frozen = true;

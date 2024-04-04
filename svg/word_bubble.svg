@@ -1,0 +1,8 @@
+<svg width="372" height="210" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+    <polygon fill="white" points="121.73458862304688,171.7971954345703 23.428924560546875,190.7823486328125 23.428924560546875,152.81202697753906 121.73458862304688,171.7971954345703 " stroke="#000000" stroke-width="5" transform="rotate(134.239 72.582 171.797)"/>
+    <rect fill="white" height="155" id="mySnail_word_bubble" rx="32" ry="32" stroke="#000000" stroke-width="5" width="365" x="3.5" y="4"/>
+    <text class="mySnail_wordBubble" fill="#000000" font-family="Cursive" font-size="24" stroke-width="0" text-anchor="middle" x="186" xml:space="preserve" y="38">Line 1</text>
+    <text class="mySnail_wordBubble" fill="#000000" font-family="Cursive" font-size="24" stroke-width="0" text-anchor="middle" x="186" xml:space="preserve" y="73">Line 2</text>
+    <text class="mySnail_wordBubble" fill="#000000" font-family="Cursive" font-size="24" stroke-width="0" text-anchor="middle" x="186" xml:space="preserve" y="108">Line 3</text>
+    <text class="mySnail_wordBubble" fill="#000000" font-family="Cursive" font-size="24" stroke-width="0" text-anchor="middle" x="186" xml:space="preserve" y="143">Line 4</text>
+</svg>
