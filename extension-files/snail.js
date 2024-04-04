@@ -17,12 +17,11 @@ class mySnail {
         if (InfoFromPopup) {
             this.getInfoFromPopup();
         } else {
-            this.speed = Speed;
+            this.speed = Speed * (1 + 0.2*Math.cos(Math.random()*Math.PI));
             this.setSize(Size);
             this.setColors(Colors);
             this.x = -700 * this.size;
         }
-        this.speed *= 1 + 0.2*Math.cos(Math.random()*Math.PI);
         document.documentElement.appendChild(this.snail);
         this.interval = window.setInterval(() => {
             if (!this.frozen) {
@@ -83,6 +82,7 @@ class mySnail {
             } else {
                 this.speed = parseInt(result.snailSpeed)/100;
             }
+            this.speed *= 1 + 0.2*Math.cos(Math.random()*Math.PI);
         });
     }
     hide() {
