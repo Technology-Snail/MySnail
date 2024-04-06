@@ -117,3 +117,16 @@ snail = new mySnail();
 if (document.title == "MySnail Settings") {
     snail.frozen = true;
 }
+snailInterval = window.setInterval(function() {
+    if (!document.hidden && snail.x + snail.size*470 > 270 && snail.x < window.innerWidth * 0.5) {
+        navigator.getBattery().then(function(battery) {
+            if (!battery.charging && battery.level <= 0.05) {
+                if (Math.random() > 0.5) {
+                    snail.text("Your computer battery will die soon if you don't plug it in.  You are at " + Math.round(100*battery.level).toString() + "% right now.", 7);
+                } else {
+                    snail.text("Your computer battery is at " + Math.round(100*battery.level).toString() + "%.  You may want to charge your computer soon.", 7);
+                }
+            }
+        });
+    }
+}, 30000);
