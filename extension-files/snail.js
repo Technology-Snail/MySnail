@@ -114,3 +114,6 @@ class mySnail {
 }
 
 snail = new mySnail();
+if (document.title == "MySnail Settings") {
+    snail.frozen = true;
+}
