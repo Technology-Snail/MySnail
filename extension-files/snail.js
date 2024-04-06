@@ -117,6 +117,9 @@ snail = new mySnail();
 if (document.title == "MySnail Settings") {
     snail.frozen = true;
 }
+chrome.storage.sync.get(['ss1','ss2','ss3','ss4','ss5','ss6']).then((result) => {
+    whatSnailShouldSay = result;
+});
 snailInterval = window.setInterval(function() {
     if (!document.hidden && snail.x + snail.size*470 > 270 && snail.x < window.innerWidth * 0.5) {
         navigator.getBattery().then(function(battery) {
