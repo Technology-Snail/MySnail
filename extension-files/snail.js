@@ -127,7 +127,7 @@ chrome.storage.sync.get(['ss_battery','ss_mysnail','ss_water','ss_screentime','s
     whatSnailShouldSay = result;
     if (whatSnailShouldSay.ss_news == undefined) {
         whatSnailShouldSay = {'ss_battery' : true, 'ss_mysnail' : true, 'ss_water' : true, 'ss_screentime' : true, 'ss_funfact' : true, 'ss_news' : true};
-        chrome.storage.sync.set({'ss_battery' : true, 'ss_mysnail' : true, 'ss_water' : true, 'ss_screentime' : true, 'ss_funfact' : true, 'ss_news' : true});
+        chrome.storage.sync.set(whatSnailShouldSay);
     }
 });
 
