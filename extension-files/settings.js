@@ -25,6 +25,15 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('sizeAdjust').value = parseInt(result.snailSize);
             document.getElementById('snailSpeed').value = parseInt(result.snailSpeed);
         }
+        if (result.ss_news == undefined) {
+            chrome.storage.sync.set({'ss_battery' : true, 'ss_mysnail' : true, 'ss_water' : true, 'ss_screentime' : true, 'ss_funfact' : true, 'ss_news' : true});
+        } else {
+            document.getElementById('ss_battery').checked = result.ss_battery;
+            document.getElementById('ss_mysnail').checked = result.ss_battery;
+            document.getElementById('ss_water').checked = result.ss_water;
+            document.getElementById('ss_screentime').checked = result.ss_screentime;
+            document.getElementById('ss_funfact').checked = result.ss_funfact;
+            document.getElementById('ss_news').checked = result.ss_news;
         }
     });
     document.getElementById("sliders").addEventListener('click', updateStorage, false);
