@@ -125,19 +125,27 @@ snail = new mySnail();
 if (document.title == "MySnail Settings") {
     snail.frozen = true;
 }
-chrome.storage.sync.get(['ss1','ss2','ss3','ss4','ss5','ss6']).then((result) => {
+
+chrome.storage.sync.get(['ss_battery','ss_mysnail','ss_water','ss_screentime','ss_funfact','ss_news']).then((result) => {
     whatSnailShouldSay = result;
+    if (whatSnailShouldSay.ss_news == undefined) {
+        whatSnailShouldSay = {'ss_battery' : true, 'ss_mysnail' : true, 'ss_water' : true, 'ss_screentime' : true, 'ss_funfact' : true, 'ss_news' : true};
+        chrome.storage.sync.set({'ss_battery' : true, 'ss_mysnail' : true, 'ss_water' : true, 'ss_screentime' : true, 'ss_funfact' : true, 'ss_news' : true});
+    }
 });
+
 snailInterval = window.setInterval(function() {
-    if (!document.hidden && snail.x + snail.size*470 > 270 && snail.x < window.innerWidth * 0.5) {
-        navigator.getBattery().then(function(battery) {
-            if (!battery.charging && battery.level <= 0.05) {
-                if (Math.random() > 0.5) {
-                    snail.text("Your computer battery will die soon if you don't plug it in.  You are at " + Math.round(100*battery.level).toString() + "% right now.", 7);
-                } else {
-                    snail.text("Your computer battery is at " + Math.round(100*battery.level).toString() + "%.  You may want to charge your computer soon.", 7);
+    if (!document.hidden && snail.x > 270 && snail.x < window.innerWidth * 0.7) {
+        if (whatSnailShouldSay.ss_battery) {
+            navigator.getBattery().then(function(battery) {
+                if (!battery.charging && battery.level <= 0.05) {
+                    if (Math.random() > 0.5) {
+                        snail.text("Your computer battery will die soon if you don't plug it in.  You are at " + Math.round(100*battery.level).toString() + "% right now.", 7);
+                    } else {
+                        snail.text("Your computer battery is at " + Math.round(100*battery.level).toString() + "%.  You may want to charge your computer soon.", 7);
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 }, 30000);
