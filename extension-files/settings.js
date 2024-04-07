@@ -12,30 +12,19 @@ const snailJudge = new brain.NeuralNetwork();
 var trainingData;
 
 document.addEventListener('DOMContentLoaded', function() {
-    chrome.storage.sync.get(['innerShellColor']).then((result) => {
+    chrome.storage.sync.get(['innerShellColor','shellColor','bodyColorLow','bodyColorHigh','snailSize','snailSpeed','ss_battery','ss_mysnail','ss_water','ss_screentime','ss_funfact','ss_news']).then((result) => {
         if (result.innerShellColor == undefined) {
             revert();
         } else {
             document.body.style.backgroundColor = (result.innerShellColor);
-            document.getElementById('innerShellColor').value = (result.innerShellColor);
-            chrome.storage.sync.get(['shellColor']).then((result) => {
-                document.getElementById('shellColor').value = (result.shellColor);
-            });
-            chrome.storage.sync.get(['bodyColorLow']).then((result) => {
-                document.getElementById('bodyColorLow').value = (result.bodyColorLow);
-            });
-            chrome.storage.sync.get(['bodyColorHigh']).then((result) => {
-                document.getElementById('bodyColorHigh').value = (result.bodyColorHigh);
-            });
-            chrome.storage.sync.get(['snailSize']).then((result) => {
-                document.getElementById('sizeAdjust').value = parseInt(result.snailSize);
-            });
-            chrome.storage.sync.get(['snailSize']).then((result) => {
-                document.getElementById('sizeAdjust').value = parseInt(result.snailSize);
-            });
-            chrome.storage.sync.get(['snailSpeed']).then((result) => {
-                document.getElementById('snailSpeed').value = parseInt(result.snailSpeed);
-            });
+            document.getElementById('innerShellColor').value = result.innerShellColor;
+            document.getElementById('shellColor').value = result.shellColor;
+            document.getElementById('bodyColorLow').value = result.bodyColorLow;
+            document.getElementById('bodyColorHigh').value = result.bodyColorHigh;
+            document.getElementById('sizeAdjust').value = parseInt(result.snailSize);
+            document.getElementById('sizeAdjust').value = parseInt(result.snailSize);
+            document.getElementById('snailSpeed').value = parseInt(result.snailSpeed);
+        }
         }
     });
     document.getElementById("sliders").addEventListener('click', updateStorage, false);
