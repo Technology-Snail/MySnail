@@ -94,6 +94,9 @@ class mySnail {
             }
             this.speed *= 1 + 0.2*Math.cos(Math.random()*Math.PI);
         });
+        chrome.storage.sync.onChanged.addListener(() => {
+            this.getInfoFromPopup();
+        });
     }
     hide() {
         this.snail.style.display = "none";
