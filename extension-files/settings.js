@@ -68,13 +68,15 @@ function updateStorage() {
 }
 
 function revert() {
-    document.getElementById("innerShellColor").value = "#00f2ff";
-    document.getElementById("shellColor").value = "#003fff";
-    document.getElementById("bodyColorLow").value = "#ffaa00";
-    document.getElementById("bodyColorHigh").value = "#ffe500";
-    document.getElementById("sizeAdjust").value = "25";
-    document.getElementById("snailSpeed").value = "20";
-    updateStorage();
+    if (confirm("Are you sure you want to revert your snail to default?  The snail's colors, size, and speed will all be changed to their default values.")) {
+        document.getElementById("innerShellColor").value = "#00f2ff";
+        document.getElementById("shellColor").value = "#003fff";
+        document.getElementById("bodyColorLow").value = "#ffaa00";
+        document.getElementById("bodyColorHigh").value = "#ffe500";
+        document.getElementById("sizeAdjust").value = "25";
+        document.getElementById("snailSpeed").value = "20";
+        updateStorage();
+    }
 }
 
 function generateColor() {
