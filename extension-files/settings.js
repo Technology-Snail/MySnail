@@ -61,12 +61,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function updateStorage() {
     document.body.style.backgroundColor = document.getElementById("innerShellColor").value;
-    chrome.storage.sync.set({'innerShellColor' : document.getElementById("innerShellColor").value});
-    chrome.storage.sync.set({'shellColor' : document.getElementById("shellColor").value});
-    chrome.storage.sync.set({'bodyColorLow' : document.getElementById("bodyColorLow").value});
-    chrome.storage.sync.set({'bodyColorHigh' : document.getElementById("bodyColorHigh").value});
-    chrome.storage.sync.set({'snailSize' : document.getElementById("sizeAdjust").value});
-    chrome.storage.sync.set({'snailSpeed' : document.getElementById("snailSpeed").value});
+    chrome.storage.sync.set({
+        'innerShellColor' : document.getElementById("innerShellColor").value,
+        'shellColor' : document.getElementById("shellColor").value,
+        'bodyColorLow' : document.getElementById("bodyColorLow").value,
+        'bodyColorHigh' : document.getElementById("bodyColorHigh").value,
+        'snailSize' : document.getElementById("sizeAdjust").value,
+        'snailSpeed' : document.getElementById("snailSpeed").value
+    });
     snail.getInfoFromPopup();
 }
 
