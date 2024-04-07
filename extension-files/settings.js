@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         if (result.ss_news == undefined) {
             chrome.storage.sync.set({'ss_battery' : true, 'ss_mysnail' : true, 'ss_water' : true, 'ss_screentime' : true, 'ss_funfact' : true, 'ss_news' : true});
-        } else {
+        } else if (document.getElementById("speech") != null) {
             document.getElementById('ss_battery').checked = result.ss_battery;
             document.getElementById('ss_mysnail').checked = result.ss_mysnail;
             document.getElementById('ss_water').checked = result.ss_water;
@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         snail.setSize(document.getElementById("sizeAdjust").value/100);
         snail.speed = document.getElementById("snailSpeed").value/100;
     }, false);
+    if (document.getElementById("speech") != null) {
         document.getElementById("speech").addEventListener('input', function() {
             chrome.storage.sync.set({
                 'ss_battery' : document.getElementById('ss_battery').checked,
@@ -52,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'ss_news' : document.getElementById('ss_news').checked
             });
         }, false);
+    }
     document.getElementById("revert").addEventListener('click', revert, false);
     document.getElementById("randomize").addEventListener('click', function() {
         document.getElementById("randomize").disabled = "true";
