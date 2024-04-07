@@ -7,9 +7,9 @@ Although the chrome extension is MySnail's central purpose, MySnail also has an 
 <script src="https://technology-snail.github.io/MySnail/resources/snail.js"></script>
 <script>new mySnail()</script>
 ```
-You can also include the script with the first line and make the snail appear later.  If you have something that takes a long time to load on your site, for example, you could create the snail when the user clicks the button:
+You could also include the API with only the first line and make the snail appear later.  If you have something that takes a long time to load on your site, for example, you could create the snail when the user clicks the button:
 ```
-<button onclick="new mySnail()">Begin Processing...."</button>
+<button onclick="new mySnail()">Begin Lengthy Processing....</button>
 ```
 This would add a halarious twist to your website to make the wait not seem so long!
 
