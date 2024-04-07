@@ -58,41 +58,31 @@ class mySnail {
         this.snail.children[0].children[1].children[0].children[1].children[1].attributes.fill.value = colorList[3];
     }
     getInfoFromPopup() {
-        chrome.storage.sync.get(['innerShellColor']).then((result) => {
+        chrome.storage.sync.get(['innerShellColor','shellColor','bodyColorLow','bodyColorHigh','snailSize','snailSpeed']).then((result) => {
             var color1 = result.innerShellColor;
-            chrome.storage.sync.get(['shellColor']).then((result) => {
-                var color2 = result.shellColor;
-                chrome.storage.sync.get(['bodyColorLow']).then((result) => {
-                    var color3 = result.bodyColorLow;
-                    chrome.storage.sync.get(['bodyColorHigh']).then((result) => {
-                        var color4 = result.bodyColorHigh;
-                        if (color1 == undefined || color2 == undefined || color3 == undefined || color4 == undefined) {
-                            this.setColors(["#00f2ff", "#003fff", "#ffaa00", "#ffe500"]);
-                        } else {
-                            this.setColors([color1, color2, color3, color4]);
-                        }
-                    });
-                });
-            });
-        });
-        chrome.storage.sync.get(['snailSize']).then((result) => {
+            var color2 = result.shellColor;
+            var color3 = result.bodyColorLow;
+            var color4 = result.bodyColorHigh;
+            if (color1 == undefined || color2 == undefined || color3 == undefined || color4 == undefined) {
+                this.setColors(["#00f2ff", "#003fff", "#ffaa00", "#ffe500"]);
+            } else {
+                this.setColors([color1, color2, color3, color4]);
+            }
             if (result.snailSize == undefined) {
                 this.setSize(0.25);
             } else {
                 this.setSize(parseInt(result.snailSize)/100);
             }
-            if (!this.gotSizeInfo) {
-                this.x = -700 * this.size;
-                this.gotSizeInfo = true;
-            }
-        });
-        chrome.storage.sync.get(['snailSpeed']).then((result) => {
             if (result.snailSpeed == undefined) {
                 this.speed = 0.4;
             } else {
                 this.speed = parseInt(result.snailSpeed)/100;
             }
             this.speed *= 1 + 0.2*Math.cos(Math.random()*Math.PI);
+            if (!this.gotSizeInfo) {
+                this.x = -700 * this.size;
+                this.gotSizeInfo = true;
+            }
         });
         chrome.storage.sync.onChanged.addListener(() => {
             this.getInfoFromPopup();
