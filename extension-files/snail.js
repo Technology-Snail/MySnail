@@ -107,6 +107,9 @@ class mySnail {
     showBubble() {
         this.wordBubble.style.display = '';
     }
+    showingBubble() {
+        return !(this.wordBubble.style.display == "none");
+    }
     text(words, durationSeconds = 0) {
         this.wordBubble.innerHTML = words;
         this.showBubble();
