@@ -5,6 +5,7 @@ document.head.appendChild(noprint);
 class mySnail {
     constructor(Freeze = false, InfoFromPopup = true, Size = 0.25, Speed = 0.4, Colors = ["#00f2ff", "#003fff", "#ffaa00", "#ffe500"]) {
         this.randomID = Math.random().toString(16).slice(2);
+        this.gotSizeInfo = false;
         this.speed = Speed;
         this.frozen = Freeze;
         this.wordBubble = document.createElement("div");
@@ -23,6 +24,7 @@ class mySnail {
             this.setSize(Size);
             this.setColors(Colors);
             this.x = -700 * this.size;
+            this.gotSizeInfo = true;
         }
         document.documentElement.appendChild(this.snail);
         document.documentElement.appendChild(this.wordBubble);
@@ -79,7 +81,10 @@ class mySnail {
             } else {
                 this.setSize(parseInt(result.snailSize)/100);
             }
-            this.x = -700 * this.size;
+            if (!this.gotSizeInfo) {
+                this.x = -700 * this.size;
+                this.gotSizeInfo = true;
+            }
         });
         chrome.storage.sync.get(['snailSpeed']).then((result) => {
             if (result.snailSpeed == undefined) {

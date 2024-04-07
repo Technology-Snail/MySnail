@@ -36,6 +36,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     document.getElementById("sliders").addEventListener('click', updateStorage, false);
     document.getElementById("submit").addEventListener('click', updateStorage, false);
+    document.getElementById("sliders").addEventListener('input', function() {
+        snail.setSize(document.getElementById("sizeAdjust").value/100);
+        snail.speed = document.getElementById("snailSpeed").value/100;
+    }, false);
     document.getElementById("revert").addEventListener('click', revert, false);
     document.getElementById("randomize").addEventListener('click', function() {
         document.getElementById("randomize").disabled = "true";
