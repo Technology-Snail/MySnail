@@ -42,6 +42,16 @@ document.addEventListener('DOMContentLoaded', function() {
         snail.setSize(document.getElementById("sizeAdjust").value/100);
         snail.speed = document.getElementById("snailSpeed").value/100;
     }, false);
+        document.getElementById("speech").addEventListener('input', function() {
+            chrome.storage.sync.set({
+                'ss_battery' : document.getElementById('ss_battery').checked,
+                'ss_mysnail' : document.getElementById('ss_mysnail').checked,
+                'ss_water' : document.getElementById('ss_water').checked,
+                'ss_screentime' : document.getElementById('ss_screentime').checked,
+                'ss_funfact' : document.getElementById('ss_funfact').checked,
+                'ss_news' : document.getElementById('ss_news').checked
+            });
+        }, false);
     document.getElementById("revert").addEventListener('click', revert, false);
     document.getElementById("randomize").addEventListener('click', function() {
         document.getElementById("randomize").disabled = "true";
