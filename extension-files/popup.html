@@ -10,9 +10,11 @@
                 font-family: 'Arial Rounded MT Bold', 'Asap SemiBold', 'Rounded Mplus 1c Bold', FairyMuffinRoundPop, 'Gill Sans', 'Trebuchet MS', sans-serif;
             }
             section {
-                padding: 15px;
+                padding: 12px;
                 border-radius: 15px;
                 background-color: #efe5;
+                margin: 0px;
+                margin-bottom: -5px;
             }
             h2 {
                 font-size: 15pt;
@@ -31,7 +33,7 @@
                 font-family: Impact, sans-serif;
                 padding: 3px;
                 border-radius: 5px;
-                background-color: red;
+                background-color: purple;
                 color: white;
             }
             sub:hover, label:hover { cursor: help; }
@@ -60,10 +62,10 @@
             } input[type="color"]:hover { cursor: cell; }
             table {
                 width: 100%;
+                margin: -2.5px;
             }
-            td {
-                width: 50%;
-                text-align: center;
+            .littleTable {
+                width: 101.4%;
             }
             #submit {
                 background-color: rgb(4, 172, 4);
@@ -83,7 +85,7 @@
     </head>
     <body>
         <h1>MySnail 2.0<sub title="You are using the pre-release BETA version of MySnail 2.0.">BETA</sub> Settings</h1>
-        <table id="sliders">
+        <table id="sliders" class="littleTable">
             <tr>
                 <td>
                     <section>
@@ -109,7 +111,7 @@
             <button id="submit">Update Colors</button>
         </section><br>
         <section>
-            <table>
+            <table class="littleTable">
                 <tr>
                     <td><button id="revert">Revert to Default</button></td>
                     <td><button id="randomize">Randomize Colors</button></td>

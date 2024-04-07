@@ -14,10 +14,15 @@
                 display: inline-block;
                 padding: 5px;
             }
+            .options {
+                text-align: left;
+            }
             section {
-                padding: 15px;
+                padding: 12px;
                 border-radius: 15px;
                 background-color: #efe5;
+                margin: 0px;
+                margin-bottom: -5px;
             }
             h2 {
                 font-size: 15pt;
@@ -31,15 +36,12 @@
                 margin-top: 0px;
                 margin-bottom: 7px;
             }
-            .options {
-                text-align: left;
-            }
             sub {
                 font-size: 0.5em;
                 font-family: Impact, sans-serif;
                 padding: 3px;
                 border-radius: 5px;
-                background-color: red;
+                background-color: purple;
                 color: white;
             }
             sub:hover, label:hover { cursor: help; }
@@ -68,11 +70,10 @@
             } input[type="color"]:hover { cursor: cell; }
             table {
                 width: 100%;
-                padding: 0px;
-                margin: -2px;
+                margin: -2.5px;
             }
-            td {
-                text-align: center;
+            .littleTable {
+                width: 101.4%;
             }
             #submit {
                 background-color: rgb(4, 172, 4);
@@ -95,7 +96,7 @@
         <table>
             <tr>
                 <td class="container">
-                    <table id="sliders">
+                    <table id="sliders" class="littleTable">
                         <tr>
                             <td style="width:50%">
                                 <section>
@@ -121,7 +122,7 @@
                         <button id="submit">Update Colors</button>
                     </section><br>
                     <section>
-                        <table>
+                        <table class="littleTable">
                             <tr>
                                 <td><button id="revert">Revert to Default</button></td>
                                 <td><button id="randomize">Randomize Colors</button></td>
