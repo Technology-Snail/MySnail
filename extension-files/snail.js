@@ -122,9 +122,6 @@ class mySnail {
 }
 
 snail = new mySnail();
-if (document.title == "MySnail Settings") {
-    snail.frozen = true;
-}
 
 chrome.storage.sync.get(['ss_battery','ss_mysnail','ss_water','ss_screentime','ss_funfact','ss_news']).then((result) => {
     whatSnailShouldSay = result;
