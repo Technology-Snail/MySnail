@@ -94,4 +94,4 @@ Just follow the simple steps below to get your pet digital snail:
 
 # Feedback
 
-If you have any technical difficulties, questions, or feedback, feel free to participate in this repository's [discussion](https://github.com/Technology-Snail/MySnail-Chrome-Extension/discussions/8), or send an email to [email.technologysnail@gmail.com](https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=email.technologysnail@gmail.com).
+If you have any technical difficulties, questions, or feedback, _please_ participate in this repository's [discussion](https://github.com/Technology-Snail/MySnail-Chrome-Extension/discussions/8), or send an email to [email.technologysnail@gmail.com](https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=email.technologysnail@gmail.com).
