@@ -56,14 +56,10 @@ class mySnail {
     }
     getInfoFromPopup() {
         chrome.storage.sync.get(['innerShellColor','shellColor','bodyColorLow','bodyColorHigh','snailSize','snailSpeed']).then((result) => {
-            var color1 = result.innerShellColor;
-            var color2 = result.shellColor;
-            var color3 = result.bodyColorLow;
-            var color4 = result.bodyColorHigh;
-            if (color1 == undefined || color2 == undefined || color3 == undefined || color4 == undefined) {
+            if (result.shellColor == undefined) {
                 this.setColors(["#00f2ff", "#003fff", "#ffaa00", "#ffe500"]);
             } else {
-                this.setColors([color1, color2, color3, color4]);
+                this.setColors([result.innerShellColor, result.shellColor, result.bodyColorLow, result.bodyColorHigh]);
             }
             if (result.snailSize == undefined) {
                 this.setSize(0.25);
