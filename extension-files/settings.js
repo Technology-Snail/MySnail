@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         document.documentElement.style.cursor = "default";
                     }, 500);
                 } else {
-                    if (confirm("<h1>ERROR:</h1>Something went wrong while fetching the snail judge's training data.  The snail judge is an AI that is meant to determine what color combinations go well together, and is necessary for randomizing the colors on your snail nicely.<h3>Would you like to randomize without the AI this time? (Color combo may be terrible, but you can always change it.)</h3>")) {
+                    if (confirm("ERROR!\n\nSomething went wrong while fetching the snail judge's training data.  The snail judge is an AI that is meant to determine what color combinations go well together, and it is necessary for nicely randomizing the colors on your snail.\n\nWould you like to randomize without the AI this time? (Color combo may be terrible, but you can always change it.)")) {
                         document.getElementById("innerShellColor").value = generateColor();
                         document.getElementById("shellColor").value = generateColor();
                         document.getElementById("bodyColorLow").value = generateColor();
