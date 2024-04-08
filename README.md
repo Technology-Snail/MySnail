@@ -73,11 +73,10 @@ Shortly after the release of version 2.0, version 3.0 will be released.  Version
  - The snails may not only be at the bottom of the page but also **on the walls and the ceiling**! (optional)
  - ***More!*** (_TBD, potentially AI stuff...._)
 
+<br>
 
 ![image](https://github.com/Technology-Snail/MySnail-Chrome-Extension/assets/71152561/43caed6d-1d88-4cc8-a7e9-386b4daccbff)
 < Get the MySnail Chrome Extension Today!
-
-<br>
 
 # How to Install the Extension Now
 
