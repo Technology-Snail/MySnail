@@ -11,9 +11,9 @@ You could also include the API with only the first line and make the snail appea
 ```
 <button onclick="new mySnail()">Begin Lengthy Processing....</button>
 ```
-This would add a halarious twist to your website to make the wait not seem so long!
+This would add a hilarious twist to your website to make the wait not seem so long!
 
-You can also customise the snail with the following parameters:
+You can also customize the snail with the following parameters:
 | Parameter Name | What It Is | Default Value |
 | :-- | :-- | :-- |
 | Freeze | Set to `true` if you want the snail to stay in one spot and `false` if you want the snail to crawl from one side of the screen to the other. | `false` |
@@ -25,10 +25,10 @@ For example, if you wanted to create a moving snail that was an inch tall and mo
 ```
 new mySnail(false, 0.25, 0.1, ["deepskyblue", "royalblue", "orange", "yellow"]);
 ```
-If you want the snail to dissappear later, you can use the `hide()` function.  Just make sure to store the snail in a variable first:
+If you want the snail to disappear later, you can use the `hide()` function.  Just make sure to store the snail in a variable first:
 ```
 aSnailNamedJoe = new mySnail(); // Stores a new snail in a variable
-aSnailNamedJoe.hide(); // Makes the snail dissappear
+aSnailNamedJoe.hide(); // Makes the snail disappear
 ```
 There are also some other functions you can use.  Here are just a few examples:
 ```
@@ -57,7 +57,7 @@ Version 2.0 of the chrome extension will bring drastic changes to MySnail, inclu
   - [x] Low Battery Notification at (customizable value, default = 5)%
   - [x] Notification when newer version of MySnail Chrome extension is available
   - [x] A reminder to drink water, randomly but at approximately 30 minute intervals
-  - [x] Friendly reminder to get off screen at certain time, settable between 7:00pm and 11:00pm, defaulting to 10:00pm.  (You can ignore this for five minutes, but the snail will tell you the same thing more sternly five minutes later, and five minutes after that the snail will make random elements from your screen start dissappearing... Back to normal at 4:00am.)
+  - [x] Friendly reminder to get off screen at certain time, settable between 7:00pm and 11:00pm, defaulting to 10:00pm.  (You can ignore this for five minutes, but the snail will tell you the same thing more sternly five minutes later, and five minutes after that the snail will make random elements from your screen start disappearing... Back to normal at 4:00am.)
   - [x] Fun fact of the day, based on something about the national or international day it is. (Example: Penguin Awareness Day, January 20, may have a fun fact about penguins.)
   - [x] Breaking News! (only good news, no bad)  This can include an epic newly discovered species, a major advancement in technology, a rescue, etc., directly from MySnail News, a source you can trust that won't depress you with bad news.
 
@@ -68,7 +68,7 @@ Shortly after the release of version 2.0, version 3.0 will be released.  Version
  - MySnail Chat, so you can add other people with the extension to your friends list and you will be able to see their snail if you are on the same site (they can turn off this option for privacy reasons if they want).  You can click your snail and an empty word bubble will appear above it that you can type in.  Hit enter and your friends see the word bubble above your snail, so you can talk to each other through your snails!  A simple but hilariously fun way to communicate, especially when collaborating on a project.  (Technical note: _"On the same site" refers to the same domain, not an exact URL.  `earth.google.com` is separate from `mail.google.com`, but `earth.google.com/hello` is the same as `earth.google.com/hi` and `earth.google.com`._)
  - An available pro plan, involving the following:
  - Have **multiple snails** at a time on a site!
- - **Customise and save** multiple snails, with all your snails synced across Chrome!
+ - **Customize and save** multiple snails, with all your snails synced across Chrome!
  - The snails may have discoidal shells (like all of them have now) _OR_ **turret shells**, so you can have a greater variety of snail types!
  - The snails may not only be at the bottom of the page but also **on the walls and the ceiling**! (optional)
  - ***More!*** (_TBD, potentially AI stuff...._)
