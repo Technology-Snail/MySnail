@@ -66,17 +66,22 @@
             }
             .littleTable {
                 width: 101.4%;
+                table-layout: fixed;
             }
             #submit {
                 background-color: rgb(4, 172, 4);
                 width: 95%;
             }
-            #revert {
-                background-color: rgb(220, 21, 21);
-            }
             #randomize {
                 background-color: yellow;
                 color: black;
+                width: 95%;
+            }
+            #revert {
+                background-color: rgb(220, 21, 21);
+            }
+            #more {
+                background-color: blue;
             }
             .onoff {
                 position: relative;
@@ -166,13 +171,14 @@
             <input id="bodyColorLow" type="color" value="#ffaa00">
             <input id="bodyColorHigh" type="color" value="#ffe500">
             <br><br>
-            <button id="submit">Update Colors</button>
+            <button id="submit">Update Colors</button><br><br>
+            <button id="randomize">Randomize Colors</button>
         </section><br>
         <section>
             <table class="littleTable">
                 <tr>
                     <td><button id="revert">Revert to Default</button></td>
-                    <td><button id="randomize">Randomize Colors</button></td>
+                    <td><a href="./options.html" target="_blank"><button id="more">More Settings</button></a></td>
                 </tr>
             </table>
         </section>
