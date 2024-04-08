@@ -47,11 +47,12 @@ Please note that the snail is completely immune to mouse events and clicks will 
 
 <br>
 
-## Future Plans:
+# Future Plans:
 Version 2.0 of the chrome extension will bring drastic changes to MySnail, including but not limited to:
  - The snail's ability to speak with a word bubble
  - An options page for more settings beyond the usual found in the popup
- - A way to submit feedback to TechnologySnail (the business that develops MySnail)
+ - The ability to click objects behind the snail (FINALLY!)
+ - An on/off switch in the extension popup for showing/hiding the snail
  - Checkboxes in the options page to choose what the snail can talk about, including the following options:
   - [x] Low Battery Notification at (customizable value, default = 5)%
   - [x] Notification when newer version of MySnail Chrome extension is available
