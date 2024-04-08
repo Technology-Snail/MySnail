@@ -13,7 +13,7 @@ var snailJudgeTrained = false;
 var trainingData;
 
 document.addEventListener('DOMContentLoaded', function() {
-    chrome.storage.sync.get(['innerShellColor','shellColor','bodyColorLow','bodyColorHigh','snailSize','snailSpeed','ss_battery','ss_mysnail','ss_water','ss_screentime','ss_funfact','ss_news']).then((result) => {
+    chrome.storage.sync.get(['innerShellColor','shellColor','bodyColorLow','bodyColorHigh','snailSize','snailSpeed','ss_battery','ss_mysnail','ss_water','ss_screentime','ss_funfact','ss_news','showSnail']).then((result) => {
         if (result.innerShellColor == undefined) {
             revert();
         } else {
@@ -36,6 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('ss_funfact').checked = result.ss_funfact;
             document.getElementById('ss_news').checked = result.ss_news;
         }
+        if (document.getElementById("showSnail") != null) {
+            document.getElementById("showSnail").checked = result.showSnail;
+        }
     });
     document.getElementById("sliders").addEventListener('click', updateStorage, false);
     document.getElementById("submit").addEventListener('click', updateStorage, false);
@@ -53,6 +56,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 'ss_funfact' : document.getElementById('ss_funfact').checked,
                 'ss_news' : document.getElementById('ss_news').checked
             });
+        }, false);
+    }
+    if (document.getElementById("showSnail") != null) {
+        document.getElementById("showSnail").addEventListener('input', function() {
+            setTimeout(function() {
+                chrome.storage.sync.set({'showSnail' : document.getElementById("showSnail").checked });
+            }, 700);
         }, false);
     }
     document.getElementById("revert").addEventListener('click', revert, false);

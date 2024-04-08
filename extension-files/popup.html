@@ -78,6 +78,57 @@
                 background-color: yellow;
                 color: black;
             }
+            .onoff {
+                position: relative;
+                display: inline-block;
+                width: 58px;
+                height: 23px;
+            }
+            .onoff input { 
+                opacity: 0;
+                width: 0;
+                height: 0;
+                }
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: red;
+                -webkit-transition: 0.7s cubic-bezier(0.5, -0.44, 0.4, 1.52);
+                transition: 0.7s 0.5s cubic-bezier(0.5, -0.44, 0.4, 1.52);
+                border-radius: 34px;
+                }
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 15px;
+                width: 15px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: 0.7s cubic-bezier(0.5, -0.44, 0.4, 1.52);
+                transition: 0.7s cubic-bezier(0.5, -0.44, 0.4, 1.52);
+                border-radius: 50%;
+            }
+            input:checked + .slider {
+                background-color: green;
+            }
+            input:focus + .slider {
+                box-shadow: 0 0 1px green;
+            }
+            input:checked + .slider:before {
+                -webkit-transform: translateX(35px);
+                -ms-transform: translateX(35px);
+                transform: translateX(35px);
+                transition: 0.7s cubic-bezier(0.5, -0.44, 0.4, 1.52);
+            }
+            label {
+                vertical-align: middle;
+                font-size: 12pt;
+            }
         </style>
         <script src="./brain.js"></script>
         <script src="./snail.js"></script>
@@ -85,7 +136,14 @@
     </head>
     <body>
         <h1>MySnail 2.0<sub title="You are using the pre-release BETA version of MySnail 2.0.">BETA</sub> Settings</h1>
-        <table id="sliders" class="littleTable">
+        <section>
+            <label class="onoff">
+                <input id="showSnail" type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+            <label for="showSnail">Show Snail</label>
+        </section>
+        <table id="sliders" class="littleTable" style="margin-top:12px">
             <tr>
                 <td>
                     <section>

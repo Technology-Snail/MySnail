@@ -55,7 +55,7 @@ class mySnail {
         this.snail.children[0].children[1].children[0].children[1].children[1].attributes.fill.value = colorList[3];
     }
     getInfoFromPopup() {
-        chrome.storage.sync.get(['innerShellColor','shellColor','bodyColorLow','bodyColorHigh','snailSize','snailSpeed']).then((result) => {
+        chrome.storage.sync.get(['innerShellColor','shellColor','bodyColorLow','bodyColorHigh','snailSize','snailSpeed','showSnail']).then((result) => {
             if (result.shellColor == undefined) {
                 this.setColors(["#00f2ff", "#003fff", "#ffaa00", "#ffe500"]);
             } else {
@@ -75,6 +75,11 @@ class mySnail {
             if (!this.gotSizeInfo) {
                 this.x = -700 * this.size;
                 this.gotSizeInfo = true;
+            }
+            if (result.showSnail == false) {
+                this.hide();
+            } else {
+                this.show();
             }
         });
         chrome.storage.sync.onChanged.addListener(() => {
