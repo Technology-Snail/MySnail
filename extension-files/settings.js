@@ -9,6 +9,7 @@ async function getJSON(URL) {
 }
 
 const snailJudge = new brain.NeuralNetwork();
+var snailJudgeTrained = false;
 var trainingData;
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -58,25 +59,34 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("randomize").addEventListener('click', function() {
         document.getElementById("randomize").disabled = "true";
         document.documentElement.style.cursor = "progress";
-        getJSON("https://technology-snail.github.io/MySnail/resources/ai_snail_training_data.json").then(function(x) {
-            if (x.error == undefined) {
-                setTimeout(function() {
-                    trainingData = x;
-                    snailJudge.train(trainingData);
-                    randomize();
-                    document.getElementById("randomize").disabled = '';
-                    document.documentElement.style.cursor = "default";
-                }, 500);
-            } else {
-                if (confirm("<h1>ERROR:</h1>Something went wrong while fetching the snail judge's training data.  The snail judge is an AI that is meant to determine what color combinations go well together, and is necessary for randomizing the colors on your snail nicely.<h3>Would you like to randomize without the AI this time? (Color combo may be terrible, but you can always change it.)</h3>")) {
-                    document.getElementById("innerShellColor").value = generateColor();
-                    document.getElementById("shellColor").value = generateColor();
-                    document.getElementById("bodyColorLow").value = generateColor();
-                    document.getElementById("bodyColorHigh").value = generateColor();
-                    updateStorage();
+        if (!snailJudgeTrained) {
+            getJSON("https://technology-snail.github.io/MySnail/resources/ai_snail_training_data.json").then(function(x) {
+                if (x.error == undefined) {
+                    setTimeout(function() {
+                        trainingData = x;
+                        snailJudge.train(trainingData);
+                        snailJudgeTrained = true;
+                        randomize();
+                        document.getElementById("randomize").disabled = '';
+                        document.documentElement.style.cursor = "default";
+                    }, 500);
+                } else {
+                    if (confirm("<h1>ERROR:</h1>Something went wrong while fetching the snail judge's training data.  The snail judge is an AI that is meant to determine what color combinations go well together, and is necessary for randomizing the colors on your snail nicely.<h3>Would you like to randomize without the AI this time? (Color combo may be terrible, but you can always change it.)</h3>")) {
+                        document.getElementById("innerShellColor").value = generateColor();
+                        document.getElementById("shellColor").value = generateColor();
+                        document.getElementById("bodyColorLow").value = generateColor();
+                        document.getElementById("bodyColorHigh").value = generateColor();
+                        updateStorage();
+                    }
                 }
-            }
-        });
+            });
+        } else {
+            setTimeout(function() {
+                randomize();
+                document.getElementById("randomize").disabled = '';
+                document.documentElement.style.cursor = "default";
+            }, 500);
+        }
     }, false);
 },false);
 
