@@ -47,11 +47,12 @@ Please note that the snail is completely immune to mouse events and clicks will 
 
 <br>
 
-## Future Plans:
+# Future Plans:
 Version 2.0 of the chrome extension will bring drastic changes to MySnail, including but not limited to:
  - The snail's ability to speak with a word bubble
  - An options page for more settings beyond the usual found in the popup
- - A way to submit feedback to TechnologySnail (the business that develops MySnail)
+ - The ability to click objects behind the snail (FINALLY!)
+ - An on/off switch in the extension popup for showing/hiding the snail
  - Checkboxes in the options page to choose what the snail can talk about, including the following options:
   - [x] Low Battery Notification at (customizable value, default = 5)%
   - [x] Notification when newer version of MySnail Chrome extension is available
@@ -59,6 +60,8 @@ Version 2.0 of the chrome extension will bring drastic changes to MySnail, inclu
   - [x] Friendly reminder to get off screen at certain time, settable between 7:00pm and 11:00pm, defaulting to 10:00pm.  (You can ignore this for five minutes, but the snail will tell you the same thing more sternly five minutes later, and five minutes after that the snail will make random elements from your screen start dissappearing... Back to normal at 4:00am.)
   - [x] Fun fact of the day, based on something about the national or international day it is. (Example: Penguin Awareness Day, January 20, may have a fun fact about penguins.)
   - [x] Breaking News! (only good news, no bad)  This can include an epic newly discovered species, a major advancement in technology, a rescue, etc., directly from MySnail News, a source you can trust that won't depress you with bad news.
+
+If you would like to use the pre-release most recent version of MySnail, you can download it [here](https://github.com/Technology-Snail/MySnail-Chrome-Extension/archive/refs/heads/speaking-snail.zip) as long as you understand that it is still a work in progress and will be officially released when it is ready.  `MySnail 2.0 BETA` is currently better than `MySnail 1.9.6`, but it simply isn't finished yet. (From the list above of what the snail will be able to say, the snail can only tell you when your battery level is low.  The other options will be added soon; thank you for your patience.)
 
 Shortly after the release of version 2.0, version 3.0 will be released.  Version 3 will involve:
  - The ability to click and drag snails to other locations on the page
