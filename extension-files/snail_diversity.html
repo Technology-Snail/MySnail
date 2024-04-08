@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Snail Diveristy Demo</title>
+        <script src="https://technology-snail.github.io/MySnail/resources/snail.js"></script>
+        <script>
+            snails = 0;
+            function generateColor() {
+                var output = '';
+                for (i = 0; i < 6; i++) {
+                    output += (Math.floor(Math.random()*16).toString(16));
+                }
+                return "#" + output;
+            }
+            setInterval(function() {
+                new mySnail(false, Math.random(), 2*Math.random()*Math.random(), [generateColor(),generateColor(),generateColor(),generateColor()]);
+                snails++;
+                document.getElementById("snails").innerHTML = "Snails: " + snails.toString();
+            }, 1000);
+        </script>
+        <body>
+            <h3>Snail Diversity Demo</h3>
+            <p>A demonstration of a creative way to use the <a href="https://github.com/Technology-Snail/MySnail#mysnail-api">MySnail API</a>.</p>
+            <p>A new snail is randomly generated each second.  How many snails can your computer handle?</p>
+            <p id="snails"><i>Loading....</i></p>
+        </body>
+    </head>
+</html>
