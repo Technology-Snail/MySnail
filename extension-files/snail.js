@@ -8,6 +8,7 @@ class mySnail {
         this.gotSizeInfo = false;
         this.speed = Speed;
         this.frozen = Freeze;
+        this.queuing = [];
         this.wordBubble = document.createElement("div");
         this.wordBubble.style = "position:fixed;overflow:visible;padding:12px;background-color:white;border:solid black 2px;border-radius:21px;border-bottom-right-radius:0px;box-shadow:#000a -2px 5px 5px;font-family:'Arial Rounded MT Bold','Asap SemiBold','Rounded Mplus 1c Bold',FairyMuffinRoundPop,'Gill Sans','Trebuchet MS',sans-serif;font-size:12pt;width:270px;color:black;margin-bottom:0px;bottom:-5px;right:-1000px;display:none";
         this.snail = document.createElement("div");
@@ -34,6 +35,11 @@ class mySnail {
             }
             this.snail.style.left = this.x.toString()+"px";
             if (this.x > window.innerWidth || this.x < -700*this.size) { this.x = -700*this.size; }
+            if (this.queuing.length > 0) {
+                if (!document.hidden && snail.x > 270 && snail.x < 0.7*window.innerWidth && !this.showingBubble()) {
+                    this.text(this.queuing.pop(), 7)
+                }
+            }
         }, 15); // 70fps
     }
     setSize(newSize) {
@@ -101,6 +107,9 @@ class mySnail {
     showingBubble() {
         return !(this.wordBubble.style.display == "none");
     }
+    getText() {
+        return this.wordBubble.innerHTML;
+    }
     text(words, durationSeconds = 0) {
         this.wordBubble.innerHTML = words;
         this.showBubble();
@@ -109,6 +118,9 @@ class mySnail {
                 this.hideBubble();
             }, 1000*durationSeconds);
         }
+    }
+    queue(message) {
+        this.queuing.push(message);
     }
 }
 
@@ -123,17 +135,26 @@ chrome.storage.sync.get(['ss_battery','ss_mysnail','ss_water','ss_screentime','s
 });
 
 snailInterval = window.setInterval(function() {
-    if (!document.hidden && snail.x > 270 && snail.x < window.innerWidth * 0.7) {
-        if (whatSnailShouldSay.ss_battery) {
-            navigator.getBattery().then(function(battery) {
-                if (!battery.charging && battery.level <= 0.05) {
-                    if (Math.random() > 0.5) {
-                        snail.text("Your computer battery will die soon if you don't plug it in.  You are at " + Math.round(100*battery.level).toString() + "% right now.", 7);
-                    } else {
-                        snail.text("Your computer battery is at " + Math.round(100*battery.level).toString() + "%.  You may want to charge your computer soon.", 7);
-                    }
+    navigator.getBattery().then(function(battery) {
+        battery.onlevelchange = () => {
+            if (whatSnailShouldSay.ss_battery && !battery.charging && battery.level <= 0.05) {
+                if (battery.level <= 0.01) {
+                    snail.queue("YOUR COMPUTER BATTERY IS AT 1%!!!!!  PLUG IN YOUR COMPUTER IMMEDIATELY!");
+                } else if (Math.random() > 0.5) {
+                    snail.queue("Plug in your computer soon!  You are at " + Math.round(100*battery.level).toString() + "% right now.", 7);
+                } else {
+                    snail.queue("Your computer battery is at " + Math.round(100*battery.level).toString() + "%.  You may want to charge your computer soon.", 7);
                 }
-            });
+            }
         }
-    }
+        battery.onchargingchange = () => {
+            if (battery.charging) {
+                if (snail.getText().toLowerCase().indexOf("your computer") != -1) {
+                    snail.hideBubble();
+                }
+            } else if (battery.level <= 0.05) {
+                snail.queue("Your computer has come unplugged and is not currently charging, but the battery is at " + Math.round(100*battery.level).toString() + "%.  You may want to plug your computer back in.", 7);
+            }
+        }
+    });
 }, 30000);
