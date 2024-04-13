@@ -61,7 +61,7 @@ Version 2.0 of the chrome extension will bring drastic changes to MySnail, inclu
   - [x] Fun fact of the day, based on something about the national or international day it is. (Example: Penguin Awareness Day, January 20, may have a fun fact about penguins.)
   - [x] Breaking News! (only good news, no bad)  This can include an epic newly discovered species, a major advancement in technology, a rescue, etc., directly from MySnail News, a source you can trust that won't depress you with bad news.
 
-If you would like to use the pre-release most recent version of MySnail, you can download it [here](https://github.com/Technology-Snail/MySnail-Chrome-Extension/archive/refs/heads/speaking-snail.zip) as long as you understand that it is still a work in progress and will be officially released when it is ready.  `MySnail 2.0 BETA` is currently better than `MySnail 1.9.6`, but it simply isn't finished yet. (From the list above of what the snail will be able to say, the snail can only tell you when your battery level is low.  The other options will be added soon; thank you for your patience.)
+If you would like to use the pre-release most recent version of MySnail, you can download it [here](https://github.com/Technology-Snail/MySnail/archive/refs/heads/speaking-snail.zip) as long as you understand that it is still a work in progress and will be officially released when it is ready.  `MySnail 2.0 BETA` is currently better than `MySnail 1.9.6`, but it simply isn't finished yet. (From the list above of what the snail will be able to say, the snail can only tell you when your battery level is low.  The other options will be added soon; thank you for your patience.)
 
 Shortly after the release of version 2.0, version 3.0 will be released.  Version 3 will involve:
  - The ability to click and drag snails to other locations on the page
@@ -75,7 +75,7 @@ Shortly after the release of version 2.0, version 3.0 will be released.  Version
 
 <br>
 
-![image](https://github.com/Technology-Snail/MySnail-Chrome-Extension/assets/71152561/43caed6d-1d88-4cc8-a7e9-386b4daccbff)
+![image](https://github.com/Technology-Snail/MySnail/assets/71152561/43caed6d-1d88-4cc8-a7e9-386b4daccbff)
 < Get the MySnail Chrome Extension Today!
 
 # How to Install the Extension Now
@@ -85,7 +85,7 @@ Unfortunately, the MySnail Chrome Extension has not yet been published to the Ch
 Despite the fact that you can't just click a button on the Chrome Web Store and have the snail on your screen, you can _still_ get the MySnail Chrome Extension on your computer by using a different method... And it is totally worth it!
 
 Just follow the simple steps below to get your pet digital snail:
- 1. Download the Chrome Extension by clicking [this link](https://github.com/Technology-Snail/MySnail-Chrome-Extension/archive/refs/heads/main.zip).
+ 1. Download the Chrome Extension by clicking [this link](https://github.com/Technology-Snail/MySnail/archive/refs/heads/main.zip).
  2. Unzip/Unpack/Extract the previously downloaded zip file into its own folder.
  3. Go to the URL `chrome://extensions`.
  4. In the upper-right corner, you will see an on/off switch with the words "Developer mode" next to it.  Turn this switch on.
@@ -94,4 +94,4 @@ Just follow the simple steps below to get your pet digital snail:
 
 # Feedback
 
-If you have any technical difficulties, questions, or feedback, _please_ participate in this repository's [discussion](https://github.com/Technology-Snail/MySnail-Chrome-Extension/discussions/8), or send an email to [email.technologysnail@gmail.com](https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=email.technologysnail@gmail.com).
+If you have any technical difficulties, questions, or feedback, _please_ participate in this repository's [discussion](https://github.com/Technology-Snail/MySnail/discussions/8), or send an email to [email.technologysnail@gmail.com](https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=email.technologysnail@gmail.com).
