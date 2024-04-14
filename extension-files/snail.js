@@ -9,6 +9,7 @@ class mySnail {
         this.speed = Speed;
         this.frozen = Freeze;
         this.queuing = [];
+        this.readingSpeed = 0.044;
         this.wordBubble = document.createElement("div");
         this.wordBubble.style = "position:fixed;overflow:visible;padding:12px;background-color:white;border:solid black 2px;border-radius:21px;border-bottom-right-radius:0px;box-shadow:#000a -2px 5px 5px;font-family:'Arial Rounded MT Bold','Asap SemiBold','Rounded Mplus 1c Bold',FairyMuffinRoundPop,'Gill Sans','Trebuchet MS',sans-serif;font-size:12pt;width:270px;color:black;margin-bottom:0px;bottom:-5px;right:-1000px;display:none";
         this.snail = document.createElement("div");
@@ -37,7 +38,8 @@ class mySnail {
             if (this.x > window.innerWidth || this.x < -700*this.size) { this.x = -700*this.size; }
             if (this.queuing.length > 0) {
                 if (!document.hidden && snail.x > 270 && snail.x < 0.7*window.innerWidth && !this.showingBubble()) {
-                    this.text(this.queuing.pop(), 7)
+                    var snailMessage = this.queuing.pop();
+                    this.text(snailMessage, this.readingSpeed * snailMessage.length + 2);
                 }
             }
         }, 15); // 70fps
