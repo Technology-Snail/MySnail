@@ -184,4 +184,23 @@ window.addEventListener("load", () => {
             }
         }
     });
+    if (whatSnailShouldSay.ss_funfact || whatSnailShouldSay.ss_news) {
+        getJSON("https://sheets.googleapis.com/v4/spreadsheets/1dg2Js_kdY-Y-EAkjrBOrHJosHM8yPHLN1oZB5a9SXXk/values/by_date!C2:E?key=AIzaSyAQnxcD0daH7TggZSWS_RyvTBE6y2FakZE&majorDimension=COLUMNS").then(function(x) {
+            if (x.error == undefined) {
+                if (x.values[0].indexOf(todayID()) != -1) {
+                    if (whatSnailShouldSay.ss_funfact && whatSnailShouldSay.snail_lastFunfact != todayID()) {
+                        snail.queue(x.values[1][x.values[0].indexOf(todayID())]);
+                        snailFunfactWait = window.setInterval(function() {
+                            if (snail.queuing.length == 0) {
+                                chrome.storage.sync.set({'snail_lastFunfact' : todayID()});
+                                window.clearInterval(snailFunfactWait);
+                            }
+                        }, 2000);
+                    }
+                } else {
+                    console.error("A fun fact has not been posted to the snail's system for today.  Please contact email.technologysnail@gmail.com immediately to let us know.");
+                }
+            }
+        });
+    }
 });
