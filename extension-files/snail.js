@@ -37,7 +37,7 @@ class mySnail {
             this.snail.style.left = this.x.toString()+"px";
             if (this.x > window.innerWidth || this.x < -700*this.size) { this.x = -700*this.size; }
             if (this.queuing.length > 0) {
-                if (!document.hidden && snail.x > 270 && snail.x < 0.7*window.innerWidth && !this.showingBubble()) {
+                if (!document.hidden && this.visible() && snail.x > 270 && snail.x < 0.7*window.innerWidth && !this.showingBubble()) {
                     var snailMessage = this.queuing.pop();
                     this.text(snailMessage, this.readingSpeed * snailMessage.length + 2);
                 }
@@ -99,6 +99,9 @@ class mySnail {
     }
     show() {
         this.snail.style.display = '';
+    }
+    visible() {
+        return !(this.snail.style.display == "none");
     }
     hideBubble() {
         this.wordBubble.style.display = "none";
