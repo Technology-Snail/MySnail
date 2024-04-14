@@ -135,6 +135,22 @@ class mySnail {
     }
 }
 
+function todayID() {
+    var today = new Date();
+    return (367*today.getFullYear() + 32*today.getMonth() + today.getDate()).toString();
+}
+
+async function getJSON(URL) {
+    const req = new Request(URL);
+    req.cache = "no-store";
+    try {
+        const res = (await fetch(req)).json();
+        return res;
+    } catch(err) {
+        return {"error" : err};
+    }
+}
+
 snail = new mySnail();
 
 chrome.storage.sync.get(['ss_battery','ss_mysnail','ss_water','ss_screentime','ss_funfact','ss_news']).then((result) => {
