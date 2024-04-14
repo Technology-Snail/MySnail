@@ -161,7 +161,7 @@ chrome.storage.sync.get(['ss_battery','ss_mysnail','ss_water','ss_screentime','s
     }
 });
 
-snailInterval = window.setInterval(function() {
+window.addEventListener("load", () => {
     navigator.getBattery().then(function(battery) {
         battery.onlevelchange = () => {
             if (whatSnailShouldSay.ss_battery && !battery.charging && battery.level <= 0.05) {
@@ -184,4 +184,4 @@ snailInterval = window.setInterval(function() {
             }
         }
     });
-}, 30000);
+});
