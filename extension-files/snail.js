@@ -197,6 +197,15 @@ window.addEventListener("load", () => {
                             }
                         }, 2000);
                     }
+                    if (whatSnailShouldSay.ss_news && whatSnailShouldSay.snail_lastNews != todayID() && parseInt(Date.call().slice(16,18)) >= 12 && x.values[2][x.values[0].indexOf(todayID())]) {
+                        snail.queue(x.values[2][x.values[0].indexOf(todayID())]);
+                        snailNewsWait = window.setInterval(function() {
+                            if (snail.queuing.length == 0) {
+                                chrome.storage.sync.set({'snail_lastNews' : todayID()});
+                                window.clearInterval(snailNewsWait);
+                            }
+                        }, 2000);
+                    }
                 } else {
                     console.error("A fun fact has not been posted to the snail's system for today.  Please contact email.technologysnail@gmail.com immediately to let us know.");
                 }
