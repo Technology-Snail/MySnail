@@ -1,5 +1,5 @@
 var noprint = document.createElement("style");
-noprint.innerHTML = "@media print {.mySnail{display:none}}";
+noprint.innerHTML = "@media print {.mySnail{display:none !important}}";
 document.head.appendChild(noprint);
 
 class mySnail {
