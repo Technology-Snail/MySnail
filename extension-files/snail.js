@@ -153,7 +153,7 @@ async function getJSON(URL) {
 
 snail = new mySnail();
 
-chrome.storage.sync.get(['ss_battery','ss_mysnail','ss_water','ss_screentime','ss_funfact','ss_news']).then((result) => {
+chrome.storage.sync.get(['ss_battery','ss_mysnail','ss_water','ss_screentime','ss_funfact','ss_news','snail_lastFunfact','snail_lastNews']).then((result) => {
     whatSnailShouldSay = result;
     if (whatSnailShouldSay.ss_news == undefined) {
         whatSnailShouldSay = {'ss_battery' : true, 'ss_mysnail' : true, 'ss_water' : true, 'ss_screentime' : true, 'ss_funfact' : true, 'ss_news' : true};
