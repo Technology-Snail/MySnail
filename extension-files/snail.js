@@ -164,9 +164,9 @@ chrome.storage.sync.get(['ss_battery','ss_mysnail','ss_water','ss_screentime','s
 window.addEventListener("load", () => {
     navigator.getBattery().then(function(battery) {
         battery.onlevelchange = () => {
-            if (whatSnailShouldSay.ss_battery && !battery.charging && battery.level <= 0.05) {
+            if (whatSnailShouldSay.ss_battery && !battery.charging && battery.level <= 0.05 && battery.level > 0) {
                 if (battery.level <= 0.01) {
-                    snail.queue("YOUR COMPUTER BATTERY IS AT 1%!!!!!  PLUG IN YOUR COMPUTER IMMEDIATELY!");
+                    snail.queue("YOUR COMPUTER BATTERY IS AT 1%!  PLUG IN YOUR COMPUTER IMMEDIATELY!");
                 } else if (Math.random() > 0.5) {
                     snail.queue("Plug in your computer soon!  You are at " + Math.round(100*battery.level).toString() + "% right now.", 7);
                 } else {
