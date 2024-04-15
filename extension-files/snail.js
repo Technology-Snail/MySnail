@@ -179,7 +179,7 @@ window.addEventListener("load", () => {
                 if (snail.getText().toLowerCase().indexOf("your computer") != -1) {
                     snail.hideBubble();
                 }
-            } else if (battery.level <= 0.05) {
+            } else if (battery.level <= 0.1) {
                 snail.queue("Your computer has come unplugged and is not currently charging, but the battery is at " + Math.round(100*battery.level).toString() + "%.  You may want to plug your computer back in.", 7);
             }
         }
