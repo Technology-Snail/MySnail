@@ -1,3 +1,5 @@
+var mySnail_version = "2.0.0";
+
 var noprint = document.createElement("style");
 noprint.innerHTML = "@media print {.mySnail{display:none !important}}";
 document.head.appendChild(noprint);
@@ -151,7 +153,7 @@ async function getJSON(URL) {
     }
 }
 
-snail = new mySnail();
+const snail = new mySnail();
 
 chrome.storage.sync.get(['ss_battery','ss_mysnail','ss_water','ss_screentime','ss_funfact','ss_news','snail_lastFunfact','snail_lastNews']).then((result) => {
     whatSnailShouldSay = result;
@@ -208,6 +210,15 @@ window.addEventListener("load", () => {
                     }
                 } else {
                     console.error("A fun fact has not been posted to the snail's system for today.  Please contact email.technologysnail@gmail.com immediately to let us know.");
+                }
+            }
+        });
+    }
+    if (whatSnailShouldSay.ss_mysnail) {
+        getJSON("https://sheets.googleapis.com/v4/spreadsheets/1dg2Js_kdY-Y-EAkjrBOrHJosHM8yPHLN1oZB5a9SXXk/values/live!B:D?key=AIzaSyAQnxcD0daH7TggZSWS_RyvTBE6y2FakZE&majorDimension=ROWS").then(function(x) {
+            if (x.error == undefined) {
+                if (x.values[0][0] != mySnail_version && x.values[0][1] == "TRUE") {
+                    snail.queue(x.values[0][2]);
                 }
             }
         });
