@@ -45,6 +45,14 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("sliders").addEventListener('input', function() {
         snail.setSize(document.getElementById("sizeAdjust").value/100);
         snail.speed = document.getElementById("snailSpeed").value/100;
+        if (
+            document.getElementById("sizeAdjust").value == document.getElementById("sizeAdjust").min ||
+            document.getElementById("sizeAdjust").value == document.getElementById("sizeAdjust").max ||
+            document.getElementById("snailSpeed").value == document.getElementById("snailSpeed").min ||
+            document.getElementById("snailSpeed").value == document.getElementById("snailSpeed").max
+        ) {
+            updateStorage();
+        }
     }, false);
     if (document.getElementById("speech") != null) {
         document.getElementById("speech").addEventListener('input', function() {
