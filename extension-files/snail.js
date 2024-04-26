@@ -209,7 +209,7 @@ window.addEventListener("load", () => {
                         }, 2000);
                     }
                 } else {
-                    console.error("A fun fact has not been posted to the snail's system for today.  Please contact email.technologysnail@gmail.com immediately to let us know.");
+                    console.warn("A fun fact has not been posted to the snail's system for today.  Please contact email.technologysnail@gmail.com immediately to let us know.");
                 }
             }
         });
