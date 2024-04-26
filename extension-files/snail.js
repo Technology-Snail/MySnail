@@ -47,7 +47,7 @@ class mySnail {
             if (this.queuing.length > 0) {
                 if (!document.hidden && this.visible() && snail.x > 270 && snail.x < 0.7*window.innerWidth && !this.showingBubble()) {
                     var snailMessage = this.queuing.pop();
-                    this.text(snailMessage, this.readingSpeed * snailMessage.length + 2);
+                    this.text(snailMessage);
                 }
             }
         }, 15); // 70fps
