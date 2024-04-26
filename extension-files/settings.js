@@ -8,6 +8,10 @@ async function getJSON(URL) {
     }
 }
 
+function $(elementID) {
+    return document.getElementById(elementID);
+}
+
 const snailJudge = new brain.NeuralNetwork();
 var snailJudgeTrained = false;
 var trainingData;
@@ -18,64 +22,64 @@ document.addEventListener('DOMContentLoaded', function() {
             revert();
         } else {
             document.body.style.backgroundColor = (result.innerShellColor);
-            document.getElementById('innerShellColor').value = result.innerShellColor;
-            document.getElementById('shellColor').value = result.shellColor;
-            document.getElementById('bodyColorLow').value = result.bodyColorLow;
-            document.getElementById('bodyColorHigh').value = result.bodyColorHigh;
-            document.getElementById('sizeAdjust').value = parseInt(result.snailSize);
-            document.getElementById('sizeAdjust').value = parseInt(result.snailSize);
-            document.getElementById('snailSpeed').value = parseInt(result.snailSpeed);
+            $('innerShellColor').value = result.innerShellColor;
+            $('shellColor').value = result.shellColor;
+            $('bodyColorLow').value = result.bodyColorLow;
+            $('bodyColorHigh').value = result.bodyColorHigh;
+            $('sizeAdjust').value = parseInt(result.snailSize);
+            $('sizeAdjust').value = parseInt(result.snailSize);
+            $('snailSpeed').value = parseInt(result.snailSpeed);
         }
         if (result.ss_news == undefined) {
             chrome.storage.sync.set({'ss_battery' : true, 'ss_mysnail' : true, 'ss_water' : true, 'ss_screentime' : true, 'ss_funfact' : true, 'ss_news' : true});
-        } else if (document.getElementById("speech") != null) {
-            document.getElementById('ss_battery').checked = result.ss_battery;
-            document.getElementById('ss_mysnail').checked = result.ss_mysnail;
-            document.getElementById('ss_water').checked = result.ss_water;
-            document.getElementById('ss_screentime').checked = result.ss_screentime;
-            document.getElementById('ss_funfact').checked = result.ss_funfact;
-            document.getElementById('ss_news').checked = result.ss_news;
+        } else if ($("speech") != null) {
+            $('ss_battery').checked = result.ss_battery;
+            $('ss_mysnail').checked = result.ss_mysnail;
+            $('ss_water').checked = result.ss_water;
+            $('ss_screentime').checked = result.ss_screentime;
+            $('ss_funfact').checked = result.ss_funfact;
+            $('ss_news').checked = result.ss_news;
         }
-        if (document.getElementById("showSnail") != null) {
-            document.getElementById("showSnail").checked = result.showSnail;
+        if ($("showSnail") != null) {
+            $("showSnail").checked = result.showSnail;
         }
     });
-    document.getElementById("sliders").addEventListener('click', updateStorage, false);
-    document.getElementById("submit").addEventListener('click', updateStorage, false);
-    document.getElementById("sliders").addEventListener('input', function() {
-        snail.setSize(document.getElementById("sizeAdjust").value/100);
-        snail.speed = document.getElementById("snailSpeed").value/100;
+    $("sliders").addEventListener('click', updateStorage, false);
+    $("submit").addEventListener('click', updateStorage, false);
+    $("sliders").addEventListener('input', function() {
+        snail.setSize($("sizeAdjust").value/100);
+        snail.speed = $("snailSpeed").value/100;
         if (
-            document.getElementById("sizeAdjust").value == document.getElementById("sizeAdjust").min ||
-            document.getElementById("sizeAdjust").value == document.getElementById("sizeAdjust").max ||
-            document.getElementById("snailSpeed").value == document.getElementById("snailSpeed").min ||
-            document.getElementById("snailSpeed").value == document.getElementById("snailSpeed").max
+            $("sizeAdjust").value == $("sizeAdjust").min ||
+            $("sizeAdjust").value == $("sizeAdjust").max ||
+            $("snailSpeed").value == $("snailSpeed").min ||
+            $("snailSpeed").value == $("snailSpeed").max
         ) {
             updateStorage();
         }
     }, false);
-    if (document.getElementById("speech") != null) {
-        document.getElementById("speech").addEventListener('input', function() {
+    if ($("speech") != null) {
+        $("speech").addEventListener('input', function() {
             chrome.storage.sync.set({
-                'ss_battery' : document.getElementById('ss_battery').checked,
-                'ss_mysnail' : document.getElementById('ss_mysnail').checked,
-                'ss_water' : document.getElementById('ss_water').checked,
-                'ss_screentime' : document.getElementById('ss_screentime').checked,
-                'ss_funfact' : document.getElementById('ss_funfact').checked,
-                'ss_news' : document.getElementById('ss_news').checked
+                'ss_battery' : $('ss_battery').checked,
+                'ss_mysnail' : $('ss_mysnail').checked,
+                'ss_water' : $('ss_water').checked,
+                'ss_screentime' : $('ss_screentime').checked,
+                'ss_funfact' : $('ss_funfact').checked,
+                'ss_news' : $('ss_news').checked
             });
         }, false);
     }
-    if (document.getElementById("showSnail") != null) {
-        document.getElementById("showSnail").addEventListener('input', function() {
+    if ($("showSnail") != null) {
+        $("showSnail").addEventListener('input', function() {
             setTimeout(function() {
-                chrome.storage.sync.set({'showSnail' : document.getElementById("showSnail").checked });
+                chrome.storage.sync.set({'showSnail' : $("showSnail").checked });
             }, 700);
         }, false);
     }
-    document.getElementById("revert").addEventListener('click', revert, false);
-    document.getElementById("randomize").addEventListener('click', function() {
-        document.getElementById("randomize").disabled = "true";
+    $("revert").addEventListener('click', revert, false);
+    $("randomize").addEventListener('click', function() {
+        $("randomize").disabled = "true";
         document.documentElement.style.cursor = "progress";
         if (!snailJudgeTrained) {
             getJSON("https://technology-snail.github.io/MySnail/resources/ai_snail_training_data.json").then(function(x) {
@@ -85,15 +89,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         snailJudge.train(trainingData);
                         snailJudgeTrained = true;
                         randomize();
-                        document.getElementById("randomize").disabled = '';
+                        $("randomize").disabled = '';
                         document.documentElement.style.cursor = "default";
                     }, 500);
                 } else {
                     if (confirm("ERROR!\n\nSomething went wrong while fetching the snail judge's training data.  The snail judge is an AI that is meant to determine what color combinations go well together, and it is necessary for nicely randomizing the colors on your snail.\n\nWould you like to randomize without the AI this time? (Color combo may be terrible, but you can always change it.)")) {
-                        document.getElementById("innerShellColor").value = generateColor();
-                        document.getElementById("shellColor").value = generateColor();
-                        document.getElementById("bodyColorLow").value = generateColor();
-                        document.getElementById("bodyColorHigh").value = generateColor();
+                        $("innerShellColor").value = generateColor();
+                        $("shellColor").value = generateColor();
+                        $("bodyColorLow").value = generateColor();
+                        $("bodyColorHigh").value = generateColor();
                         updateStorage();
                     }
                 }
@@ -101,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             setTimeout(function() {
                 randomize();
-                document.getElementById("randomize").disabled = '';
+                $("randomize").disabled = '';
                 document.documentElement.style.cursor = "default";
             }, 500);
         }
@@ -109,26 +113,26 @@ document.addEventListener('DOMContentLoaded', function() {
 },false);
 
 function updateStorage() {
-    document.body.style.backgroundColor = document.getElementById("innerShellColor").value;
+    document.body.style.backgroundColor = $("innerShellColor").value;
     chrome.storage.sync.set({
-        'innerShellColor' : document.getElementById("innerShellColor").value,
-        'shellColor' : document.getElementById("shellColor").value,
-        'bodyColorLow' : document.getElementById("bodyColorLow").value,
-        'bodyColorHigh' : document.getElementById("bodyColorHigh").value,
-        'snailSize' : document.getElementById("sizeAdjust").value,
-        'snailSpeed' : document.getElementById("snailSpeed").value
+        'innerShellColor' : $("innerShellColor").value,
+        'shellColor' : $("shellColor").value,
+        'bodyColorLow' : $("bodyColorLow").value,
+        'bodyColorHigh' : $("bodyColorHigh").value,
+        'snailSize' : $("sizeAdjust").value,
+        'snailSpeed' : $("snailSpeed").value
     });
     snail.getInfoFromPopup();
 }
 
 function revert() {
     if (confirm("Are you sure you want to revert your snail to default?  The snail's colors, size, and speed will all be changed to their default values.")) {
-        document.getElementById("innerShellColor").value = "#00f2ff";
-        document.getElementById("shellColor").value = "#003fff";
-        document.getElementById("bodyColorLow").value = "#ffaa00";
-        document.getElementById("bodyColorHigh").value = "#ffe500";
-        document.getElementById("sizeAdjust").value = "25";
-        document.getElementById("snailSpeed").value = "20";
+        $("innerShellColor").value = "#00f2ff";
+        $("shellColor").value = "#003fff";
+        $("bodyColorLow").value = "#ffaa00";
+        $("bodyColorHigh").value = "#ffe500";
+        $("sizeAdjust").value = "25";
+        $("snailSpeed").value = "20";
         updateStorage();
     }
 }
@@ -158,9 +162,9 @@ function randomize() {
             break;
         }
     }
-    document.getElementById("innerShellColor").value = c1;
-    document.getElementById("shellColor").value = c2;
-    document.getElementById("bodyColorLow").value = c3;
-    document.getElementById("bodyColorHigh").value = c4;
+    $("innerShellColor").value = c1;
+    $("shellColor").value = c2;
+    $("bodyColorLow").value = c3;
+    $("bodyColorHigh").value = c4;
     updateStorage();
 }
