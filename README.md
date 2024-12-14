@@ -14,6 +14,7 @@ You could also include the API with only the first line and make the snail appea
 This would add a hilarious twist to your website to make the wait not seem so long!
 
 You can also customize the snail with the following parameters:
+
 | Parameter Name | What It Is | Default Value |
 | :-- | :-- | :-- |
 | Freeze | Set to `true` if you want the snail to stay in one spot and `false` if you want the snail to crawl from one side of the screen to the other. | `false` |
