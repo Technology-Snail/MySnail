@@ -1,8 +1,8 @@
 # MySnail Chrome Extension
-This chrome extension, developed by TechnologySnail, allows you to have a **virtual pet snail** that shows up on _every website_ you visit.  You can **_customize_** your snail by changing its colors, size, and speed in the popup menu or in the options page.  The snail continuously crawls across the screen, and comes out of the left side after it has fully disappeared off the right side of the screen.  To hide the snail, simply double-click it.  It will come back when you reload the page or come back to it.
+This chrome extension, developed by TechnologySnail, allows you to have a **virtual pet snail** that shows up on _every website_ you visit.  You can **_customize_** your snail by changing its colors, size, and speed in the popup menu or in the options page.  The snail continuously crawls across the screen, and comes out of the left side after it has fully disappeared off the right side of the screen.
 
 # MySnail API
-Although the chrome extension is MySnail's central purpose, MySnail also has an API.  If you are a website developer, you can add a touch of fun to any site by including the following code in the `<head>` element of your page:
+Although the chrome extension is the main reason for MySnail, MySnail also has an API.  If you are a website developer, you can add a touch of fun to any site by including the following code in the `<head>` element of your page:
 ```
 <script src="https://technology-snail.github.io/MySnail/resources/snail.js"></script>
 <script>new mySnail()</script>
@@ -40,11 +40,11 @@ aSnailNamedJoe.setColors(["red","red","red","red"]); // Makes the snail complete
 aSnailNamedJoe.frozen = true; // Freeze the snail in the lower-left corner of the screen (antennae will still move)
 aSnailNamedJoe.frozen = false; // Allow a frozen snail to move again
 aSnailNamedJoe.speed = 0.1; // Make the snail move very slow
-aSnailNamedJoe.speed = 5; // Make the snail move too fast!
+aSnailNamedJoe.speed = 5; // Make the snail move much too fast!
 aSnailNamedJoe.x = 0; // Teleport the snail to the left side of the screen
 aSnailNamedJoe.x = window.innerWidth / 2; Teleport the snail halfway across the screen
 ```
-Please note that the snail is completely immune to mouse events and clicks will pass through it to anything that it may be covering up.
+Please note that **the snail is completely immune to mouse events**, meaning any clicks will pass through it to anything that it may be covering up.
 
 <br>
 
@@ -58,7 +58,7 @@ Version 2.0 of the chrome extension will bring drastic changes to MySnail, inclu
   - [x] Low Battery Notification at (customizable value, default = 5)%
   - [x] Notification when newer version of MySnail Chrome extension is available
   - [x] A reminder to drink water, randomly but at approximately 30 minute intervals
-  - [x] Friendly reminder to get off screen at certain time, settable between 7:00pm and 11:00pm, defaulting to 10:00pm.  (You can ignore this for five minutes, but the snail will tell you the same thing more sternly five minutes later, and five minutes after that the snail will make random elements from your screen start disappearing... Back to normal at 4:00am.)
+  - [x] Friendly reminder to get off screen at certain time, by default at 10:00pm but settable to any time.  (You can ignore this for five minutes, but the snail will tell you the same thing more sternly five minutes later, and five minutes after that the snail will make random elements from your screen start disappearing... Back to normal at 4:00am.)
   - [x] Fun fact of the day, based on something about the national or international day it is. (Example: Penguin Awareness Day, January 20, may have a fun fact about penguins.)
   - [x] Breaking News! (only good news, no bad)  This can include an epic newly discovered species, a major advancement in technology, a rescue, etc., directly from MySnail News, a source you can trust that won't depress you with bad news.
 
@@ -66,13 +66,14 @@ If you would like to use the pre-release most recent version of MySnail, you can
 
 Shortly after the release of version 2.0, version 3.0 will be released.  Version 3 will involve:
  - The ability to click and drag snails to other locations on the page
- - MySnail Chat, so you can add other people with the extension to your friends list and you will be able to see their snail if you are on the same site (they can turn off this option for privacy reasons if they want).  You can click your snail and an empty word bubble will appear above it that you can type in.  Hit enter and your friends see the word bubble above your snail, so you can talk to each other through your snails!  A simple but hilariously fun way to communicate, especially when collaborating on a project.  (Technical note: _"On the same site" refers to the same domain, not an exact URL.  `earth.google.com` is separate from `mail.google.com`, but `earth.google.com/hello` is the same as `earth.google.com/hi` and `earth.google.com`._)
+ - The ability to create, customize, and save multiple snails to your profile
+ - The snails may not only be at the bottom of the page, but also on the walls and the ceiling! (optional; can be changed in settings)
+ - MySnail Chat, so you can add other people with the extension to your friends list and you will be able to see their snail if you are on the same site (you can turn off this option for privacy reasons if you want).  When you hover over your snail, you will see a subtle semicircle of options around it.  You can then click the word bubble icon and an empty word bubble will appear above it that you can type in.  Hit enter and your friends will see the word bubble above your snail, so you can talk to each other through your snails!  A simple but hilariously fun way to communicate, especially when collaborating on a project.  (Technical note: _"On the same site" refers to the same domain, not an exact URL.  `earth.google.com` is separate from `mail.google.com`, but `earth.google.com/hello` is the same as `earth.google.com/hi` and `earth.google.com`._)
+ - MySnail Chat "stranger mode" (not activated by default, must be activated in settings); if enabled, see the snails of other people with this option enabled who are on the same website as you.  Make new friends discussing the content of the website you are on, and visually see how popular some websites are (more snails = more people with the extension and stranger mode activated on this website).
  - An available pro plan, involving the following:
- - Have **multiple snails** at a time on a site!
- - **Customize and save** multiple snails, with all your snails synced across Chrome!
+ - Activate **multiple snails** at once; get a little bit of unpredictability not knowing which one of your custom snails will appear on each page you open.
  - The snails may have discoidal shells (like all of them have now) _OR_ **turret shells**, so you can have a greater variety of snail types!
- - The snails may not only be at the bottom of the page but also **on the walls and the ceiling**! (optional)
- - ***More!*** (_TBD, potentially AI stuff...._)
+ - Snails are not only fun, but are also a **convenient productivity tool**!  When you hover your cursor over the snail, you will see a subtle semicircle of options around it.  In addition to the aforementioned chat option, having the pro plan will unlock a scientific calculator, a notepad, a thesaurus, and a dictonary!  Each of these appears in a convenient, resizeable, draggable popup on the website you are on.
 
 <br>
 
