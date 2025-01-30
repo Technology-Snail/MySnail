@@ -53,7 +53,7 @@ Version 2.0 of the chrome extension will bring drastic changes to MySnail, inclu
  - An options page for more settings beyond the usual found in the popup
  - A way to submit feedback to TechnologySnail (the business that develops MySnail)
  - Checkboxes in the options page to choose what the snail can talk about, including the following options:
-  - [x] Low Battery Notification at (customizable value, default = 5)%
+  - [x] Low Battery Notification at (customizable value, default = 5%)
   - [x] Notification when newer version of MySnail Chrome extension is available
   - [x] A reminder to drink water, randomly but at approximately 30 minute intervals
   - [x] Friendly reminder to get off screen at certain time, settable between 7:00pm and 11:00pm, defaulting to 10:00pm.  (You can ignore this for five minutes, but the snail will tell you the same thing more sternly five minutes later, and five minutes after that the snail will make random elements from your screen start dissappearing... Back to normal at 4:00am.)
