@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>MySnail Settings</title>
+        <link rel="icon" type="image/png" href="./icon/128.png">
+        <style>
+            body {
+                text-align: center;
+                font-family: 'Arial Rounded MT Bold', 'Rounded Mplus 1c Bold', 'M PLUS Rounded 1c Bold', 'M PLUS Rounded 1c', 'Asap SemiBold', FairyMuffinRoundPop, 'Trebuchet MS', sans-serif;
+            }
+            .container {
+                vertical-align: top;
+                display: inline-block;
+                width: 400px;
+                padding: 5px;
+                margin-bottom: 4px;
+            }
+            .options {
+                text-align: left;
+            }
+            section {
+                padding: 12px;
+                border-radius: 15px;
+                background-color: #efe5;
+                margin: 0px;
+                margin-bottom: -5px;
+            }
+            h2 {
+                font-size: 15pt;
+                padding: 0px;
+                margin-top: 0px;
+                margin-bottom: 12px;
+            }
+            h3 {
+                font-size: 12pt;
+                padding: 0px;
+                margin-top: 0px;
+                margin-bottom: 7px;
+            }
+            sub {
+                font-size: 0.35em;
+                font-family: Impact, sans-serif;
+                padding: 3px;
+                border-radius: 5px;
+                background-color: purple;
+                color: white;
+            }
+            sub:hover, label:hover { cursor: help; }
+            button {
+                padding: 7px;
+                border-radius: 20px;
+                background-color: azure;
+                width: 90%;
+                font-family: 'Arial Rounded MT Bold', sans-serif;
+                color: white;
+            } button:enabled:hover {
+                cursor: pointer;
+                padding: 10px;
+            } button:disabled {
+                cursor: progress;
+                background-color: grey !important;
+            }
+            input[type="range"] {
+                width: 90%;
+            } input[type="range"]:hover { cursor: ew-resize; }
+            input[type="color"] {
+                padding: 0px;
+                height: 40px;
+                width: 40px;
+                border: none;
+            } input[type="color"]:hover { cursor: cell; }
+            table {
+                width: 100%;
+                margin: -2.5px;
+            }
+            .littleTable {
+                width: 101.4%;
+            }
+            #submit {
+                background-color: rgb(4, 172, 4);
+                width: 95%;
+            }
+            #revert {
+                background-color: rgb(220, 21, 21);
+            }
+            #randomize {
+                background-color: yellow;
+                color: black;
+            }
+        </style>
+        <script src="./brain.js"></script>
+        <script src="./snail.js"></script>
+        <script src="./settings.js"></script>
+    </head>
+    <body>
+        <h1>MySnail 2.0<sub title="You are using the pre-release BETA version of MySnail 2.0.">BETA</sub> Settings</h1>
+        <table>
+            <tr>
+                <td class="container">
+                    <table id="sliders" class="littleTable">
+                        <tr>
+                            <td style="width:50%">
+                                <section>
+                                    <h2>Snail Size</h2>
+                                    <input id="sizeAdjust" type="range" min="2" max="50" value="25">
+                                </section>
+                            </td>
+                            <td style="width:50%">
+                                <section>
+                                    <h2>Snail Speed</h2>
+                                    <input id="snailSpeed" type="range" min="0" max="200" value="20">
+                                </section>
+                            </td>
+                        </tr>
+                    </table><br>
+                    <section>
+                        <h2>Snail Colors</h2>
+                        <input id="innerShellColor" type="color" value="#00f2ff">
+                        <input id="shellColor" type="color" value="#003fff">
+                        <input id="bodyColorLow" type="color" value="#ffaa00">
+                        <input id="bodyColorHigh" type="color" value="#ffe500">
+                        <br><br>
+                        <button id="submit">Update Colors</button>
+                    </section><br>
+                    <section>
+                        <table class="littleTable">
+                            <tr>
+                                <td><button id="revert">Revert to Default</button></td>
+                                <td><button id="randomize">Randomize Colors</button></td>
+                            </tr>
+                        </table>
+                    </section>
+                </td>
+                <td class="container">
+                    <section id="speech">
+                        <h2>Snail Speech</h2>
+                        <h3>The snail may tell you...</h3>
+                        <table>
+                            <tr>
+                                <td><input id="ss_battery" type="checkbox" checked></td>
+                                <td class="options"><label for="ss_battery" title="The snail will detect your battery level and tell you to plug in your computer when your battery level is low.">Your computer battery level is less than 5%.</label></td>
+                            </tr>
+                            <tr>
+                                <td><input id="ss_mysnail" type="checkbox" checked></td>
+                                <td class="options"><label for="ss_mysnail" title="The snail will notify you when there is a newer version of the MySnail Chrome Extension that involves more features.  This will be a rare situation and the snail will not notify you for minor changes to the extension.">A newer version of MySnail is available.</label></td>
+                            </tr>
+                            <tr>
+                                <td><input id="ss_water" type="checkbox" checked></td>
+                                <td class="options"><label for="ss_water" title="The snail will kindly remind you to drink water at random times, at approximately 30-minute intervals while you are on your computer.">To drink a glass of water.</label></td>
+                            </tr>
+                            <tr>
+                                <td><input id="ss_screentime" type="checkbox" checked></td>
+                                <td class="options"><label for="ss_screentime" title="The snail will remind you to get off your screen at the time you set.  The snail will remind you again in five minutes.  Five minutes later, the snail will hold you accountable for being on your computer too late!">To get off your computer when it is late.</label></td>
+                            </tr>
+                            <tr>
+                                <td><input id="ss_funfact" type="checkbox" checked></td>
+                                <td class="options"><label for="ss_funfact" title="The snail will tell you a random fun fact each day, somehow relating to what national or international day it is.  For example, if it is Penguin Awareness Day, the snail may tell you a random fun fact about penguins.">A daily fun fact.</label></td>
+                            </tr>
+                            <tr>
+                                <td><input id="ss_news" type="checkbox" checked></td>
+                                <td class="options"><label for="ss_news" title='The snail will alert you of random good news of something that is happening or happened recently.  This may involve a major technological breakthrough, a life saved, a major discovery, etc.  There may be a "read more" button available that links to a page on some website with more information about the event.'>Breaking news! (Only good news; no depressing news)</label></td>
+                            </tr>
+                        </table>
+                    </section>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
